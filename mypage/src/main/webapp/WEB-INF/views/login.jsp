@@ -10,7 +10,6 @@
 <body>
 <c:if test="${result==1 }">
 <script type="text/javascript">	
-	alert("로그인 성공");
 	location.href="main";
 </script>
 </c:if>
