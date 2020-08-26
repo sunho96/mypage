@@ -148,7 +148,7 @@
 									required="required" placeholder="Tel 010-xxxx-xxxx" />
 							</div>
 							<div class="off-1">
-								<input type="submit" class="login" id="joinBtn" value="Join">
+								<input type="submit" class="login" id="loginbutton" value="Join">
 							</div>
 							<a href="#LoginForm"><span>로그인화면</span></a>
 						</div>
