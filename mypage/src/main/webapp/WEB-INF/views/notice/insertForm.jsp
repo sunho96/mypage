@@ -8,27 +8,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="table/vendor/bootstrap/css/bootstrap.min.css">
+	href="../table/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="table/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	href="../table/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="table/vendor/animate/animate.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="table/vendor/select2/select2.min.css">
+<link rel="stylesheet" type="text/css" href="../table/vendor/animate/animate.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="table/vendor/perfect-scrollbar/perfect-scrollbar.css">
+	href="../table/vendor/select2/select2.min.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="table/css/table_util.css">
-<link rel="stylesheet" type="text/css" href="table/css/table_main.css">
+<link rel="stylesheet" type="text/css"
+	href="../table/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="../table/css/table_util.css">
+<link rel="stylesheet" type="text/css" href="../table/css/table_main.css">
 <!--===============================================================================================-->
 </head>
 <body>
 
 	<div class="limiter">
 		<div class="container-table100">
+		<header>
+					<h2>NOTICE<p><p></h2>
+			
+				</header>
 			<div class="wrap-table100">
 				<div class="table100 ver1 m-b-110">
 				<!-- table_main.css -> .table100.ver1 th ->  배경 색상 조절 -->
@@ -80,14 +84,14 @@
 
 
 	<!--===============================================================================================-->
-	<script src="table/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="../table/vendor/jquery/jquery-3.2.1.min.js"></script>
 	<!--===============================================================================================-->
-	<script src="table/vendor/bootstrap/js/popper.js"></script>
-	<script src="table/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../table/vendor/bootstrap/js/popper.js"></script>
+	<script src="../table/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<!--===============================================================================================-->
-	<script src="table/vendor/select2/select2.min.js"></script>
+	<script src="../table/vendor/select2/select2.min.js"></script>
 	<!--===============================================================================================-->
-	<script src="table/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script src="../table/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 	<script>
 		$('.js-pscroll').each(function() {
 			var ps = new PerfectScrollbar(this);
@@ -98,7 +102,7 @@
 		});
 	</script>
 	<!--===============================================================================================-->
-	<script src="table/js/main.js"></script>
+	<script src="../table/js/main.js"></script>
 	
 
 </body>

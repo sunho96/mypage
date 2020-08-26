@@ -25,7 +25,7 @@
 <link rel="stylesheet" type="text/css" href="table/css/table_main.css">
 <!--===============================================================================================-->
 <script type="text/javascript">
-	function insert() {
+	function insertForm() {
 		location.href="notice/insertForm";
 	}
 </script>
@@ -39,9 +39,7 @@
 			<div class="wrap-table100">
 				<header>
 					<h2>NOTICE<p><p></h2>
-			<!-- 		<table>
-					<tr><th>번호</th><th>제목</th><th>날짜</th>
-					</table> -->
+			
 				</header>
 				<div class="table100 ver1 m-b-110">
 				<!-- table_main.css -> .table100.ver1 th ->  배경 색상 조절 -->
@@ -80,7 +78,7 @@
 						</table>
 					</div>
 				</div>
-				<button onclick="insert()">입력</button>
+				<button onclick="insertForm()">입력</button>
 			</div>
 		</div>
 	</div>
