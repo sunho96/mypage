@@ -1,14 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html>
 <head>
 <title>my page</title>
 <meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="assets/css/login.css" />
-
 <style type="text/css">
 .logo {
 	padding-left: 20px;
@@ -24,7 +21,8 @@
 }
 
 #loginbutton {
-	height: 100%; border : none;
+	height: 100%;
+	border: none;
 	width: 30%;
 	border: none;
 }
@@ -39,7 +37,7 @@
 				function() {
 					$.post("emailChk.do", "email=" + $("#join_email").val(),
 							function(data) {
-								if (data=="사용가능") {
+								if (data == "사용가능") {
 									emailChk = true;
 									$("#emailChkDisp").html("사용가능한 이메일입니다");
 
@@ -58,8 +56,8 @@
 				passChk = false;
 				$('.passwordChkDisp').fadeIn('slow');
 				$("#passwordChkDisp").text("패스워드를 다시 확인해주세요");
-			}else{
-				passChk=true;
+			} else {
+				passChk = true;
 			}
 		});
 	});
@@ -93,11 +91,11 @@
 						<div class="row">
 							<div class="off-1">
 								<input type="text" class="login" name="email"
-									placeholder="Email" required="required"/>
+									placeholder="Email" required="required" />
 							</div>
 							<div class="off-1">
 								<input type="password" class="login" name="password"
-									placeholder="Password" required="required"/>
+									placeholder="Password" required="required" />
 							</div>
 							<div class="off-1">
 								<input type="submit" class="login" id="loginbutton"
@@ -108,7 +106,7 @@
 					</div>
 				</form>
 			</article>
-			
+
 			<!-- JoinForm -->
 			<article id="JoinForm" class="panel">
 				<form action="join.do" method="post" name="frmJ"
@@ -131,8 +129,7 @@
 							<div class="off-1">
 								<input type="password" class="login" name="password2"
 									id="join_password2" placeholder="Password Confirm"
-									required="required" />
-									<span id="passwordChkDisp"></span>
+									required="required" /> <span id="passwordChkDisp"></span>
 							</div>
 
 							<div class="off-1">
@@ -144,8 +141,8 @@
 									required="required" placeholder="Nickname" />
 							</div>
 							<div class="off-1">
-								<input type="text" class="login" name="tel"
-									required="required" placeholder="Tel 010-xxxx-xxxx" />
+								<input type="text" class="login" name="tel" required="required"
+									placeholder="Tel 010-xxxx-xxxx" />
 							</div>
 							<div class="off-1">
 								<input type="submit" class="login" id="loginbutton" value="Join">
