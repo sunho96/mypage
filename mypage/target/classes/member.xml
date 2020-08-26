@@ -16,4 +16,9 @@
 	<select id="select" parameterType="string" resultType="member">
 		select * from member where email=#{email}
 	</select>
+	
+	<insert id="insert" parameterType="member">
+		insert into member values
+			(member_seq.nextval,#{email},#{password},#{name},#{nickName},#{tel},sysdate,'n')
+	</insert>
 </mapper>
