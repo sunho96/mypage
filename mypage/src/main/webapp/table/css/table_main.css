@@ -235,7 +235,7 @@ th, td {
   color: #fff;
   line-height: 1.4;
 
-  background-color: #fde8d5;
+  background-color: #ffbf00; /*테이블 헤더 컬러  */
 }
 
 .table100.ver1 td {
@@ -246,7 +246,7 @@ th, td {
 }
 
 .table100.ver1 .table100-body tr:nth-child(even) {
-  background-color: #f8f6ff;
+  background-color: #fffaeb; /* 목록 짝수 */
 }
 
 /*---------------------------------------------*/
