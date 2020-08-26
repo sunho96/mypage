@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ include file="sessionChk.jsp" %>
+	<%@ include file="member/sessionChk.jsp" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -12,7 +12,7 @@
 </head>
 <body class="is-preload">
 	<div id="logo">
-		<img alt="" src="images/logo_white.png">
+		<img alt="" src="images/logo_white1.png">
 	</div>
 	<a href="logout">로그아웃</a>
 	<!-- Wrapper-->

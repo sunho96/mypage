@@ -17,7 +17,7 @@ public class MemberController {
 	
 	@RequestMapping("loginForm")
 	public String loginForm() {
-		return "loginForm";
+		return "member/loginForm";
 	}
 
 	@RequestMapping("login")
@@ -37,7 +37,7 @@ public class MemberController {
 			}
 		}
 		model.addAttribute("result", result);
-		return "login";
+		return "member/login";
 	}
 
 	@RequestMapping("main")
@@ -47,7 +47,7 @@ public class MemberController {
 	@RequestMapping("logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "loginForm";
+		return "member/loginForm";
 	}
 
 }
