@@ -88,5 +88,10 @@ public class MemberController {
 		
 		return "member/join";
 	}
+	@RequestMapping("memberUpdate_form")
+	public String memberUpdate_form() {
+	
+		return "member/memberUpdate_form";
+	}
 
 }
