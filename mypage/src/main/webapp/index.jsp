@@ -10,6 +10,7 @@
 <script type="text/javascript">
 //	location.href="loginForm";
 //	location.href="loginForm";
+//	location.href="loginForm";
 	location.href="loginForm";
 </script>
 </body>
