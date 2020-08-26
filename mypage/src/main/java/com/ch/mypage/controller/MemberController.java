@@ -53,5 +53,10 @@ public class MemberController {
 	public String table_form() {
 		return "table_form";
 	}
-
+	@RequestMapping("memberUpdate_form")
+	public String memberUpdate_form() {
+		
+		return "member/memberUpdate_form";
+	}
+	
 }

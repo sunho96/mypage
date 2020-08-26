@@ -16,6 +16,7 @@
 	</div>
 	<a href="logout">로그아웃</a>
 	<a href="table_form">테이블</a>
+	<a href="memberUpdate_form">회원정보수정</a>
 	<!-- Wrapper-->
 	<div id="wrapper">
 
