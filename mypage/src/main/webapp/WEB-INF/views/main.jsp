@@ -115,8 +115,7 @@
 
 			<!-- Notice -->
 			<article id="notice" class="panel">		
-				<div id="notice"></div>
-			<!-- 	<div id="notice"></div> -->
+				<div id="notice" align="center"></div>
 			</article>
 
 		</div>
