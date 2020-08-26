@@ -1,14 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ include file="member/sessionChk.jsp" %>
+	<%@ include file="header.jsp" %>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Astral by HTML5 UP</title>
+<title>MyPage</title>
 <meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="assets/css/main.css" />
+<script type="text/javascript">
+	$(function () {
+		$("#notice").load("notice/list");
+	})
+</script>
 </head>
 <body class="is-preload">
 	<div id="logo">
@@ -25,7 +29,8 @@
 				href="#contact" class="icon solid fa-piggy-bank"><span>AccountBook</span></a>
 			<a href="#work" class="icon solid fa-pen"><span>Write</span></a> <a
 				href="loginForm" class="icon solid fa-book"><span>Diary</span></a>
-
+			<a href="#notice" class="icon solid fa-book"><span>notice</span></a>
+			
 			<a href="https://twitter.com/ajlkn" class="icon brands fa-instagram"><span>Community</span></a>
 		</nav>
 
@@ -106,32 +111,9 @@
 				</section>
 			</article>
 
-			<!-- Contact -->
-			<article id="contact" class="panel">
-				<header>
-					<h2>Contact Me</h2>
-				</header>
-				<form action="#" method="post">
-					<div>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<input type="text" name="name" placeholder="Name" />
-							</div>
-							<div class="col-6 col-12-medium">
-								<input type="text" name="email" placeholder="Email" />
-							</div>
-							<div class="col-12">
-								<input type="text" name="subject" placeholder="Subject" />
-							</div>
-							<div class="col-12">
-								<textarea name="message" placeholder="Message" rows="6"></textarea>
-							</div>
-							<div class="col-12">
-								<input type="submit" value="Send Message" />
-							</div>
-						</div>
-					</div>
-				</form>
+			<!-- Notice -->
+			<article id="notice" class="panel">		
+				<div id="notice"></div>
 			</article>
 
 		</div>
