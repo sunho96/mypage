@@ -148,7 +148,11 @@
 									required="required" placeholder="Tel 010-xxxx-xxxx" />
 							</div>
 							<div class="off-1">
+<<<<<<< HEAD
 								<input type="submit" class="login" id="joinBtn" value="Join">
+=======
+								<input type="submit" class="login" id="loginbutton" value="Join">
+>>>>>>> refs/remotes/origin/master
 							</div>
 							<a href="#LoginForm"><span>로그인화면</span></a>
 						</div>
