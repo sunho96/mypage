@@ -49,5 +49,9 @@ public class MemberController {
 		session.invalidate();
 		return "member/loginForm";
 	}
+	@RequestMapping("table_form")
+	public String table_form() {
+		return "table_form";
+	}
 
 }

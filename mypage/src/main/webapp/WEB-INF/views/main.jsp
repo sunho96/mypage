@@ -15,6 +15,7 @@
 		<img alt="" src="images/logo_white1.png">
 	</div>
 	<a href="logout">로그아웃</a>
+	<a href="table_form">테이블</a>
 	<!-- Wrapper-->
 	<div id="wrapper">
 
