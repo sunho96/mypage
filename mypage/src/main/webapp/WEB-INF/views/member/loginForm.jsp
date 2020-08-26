@@ -5,10 +5,7 @@
 <head>
 <title>my page</title>
 <meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="assets/css/login.css" />
-
 <style type="text/css">
 .logo {
 	padding-left: 20px;
@@ -24,7 +21,8 @@
 }
 
 #loginbutton {
-	height: 100%; border : none;
+	height: 100%;
+	border: none;
 	width: 30%;
 	border: none;
 }
@@ -153,6 +151,59 @@
 =======
 								<input type="submit" class="login" id="loginbutton" value="Join">
 >>>>>>> refs/remotes/origin/master
+							</div>
+							<a href="#LoginForm"><span>로그인화면</span></a>
+							<a href="#JoinForm"><span>회원가입</span></a>
+							<a href="#JoinForm"><span>회원가입</span></a>
+							<a href="#JoinForm"><span>회원가입</span></a>
+							<a href="#JoinForm"><span>회원가입</span></a>
+							<a href="#JoinForm"><span>회원가입</span></a>
+							<a href="#JoinForm"><span>회원가입</span></a>
+							<a href="#JoinForm"><span>회원가입</span></a>
+						</div>
+					</div>
+				</form>
+			</article>
+
+			<!-- JoinForm -->
+			<article id="JoinForm" class="panel">
+				<form action="join.do" method="post" name="frmJ"
+					onsubmit="return join_submitChk()">
+					<div align="center">
+						<img alt="" src="images/logo_white1.png" width="120%"
+							style="padding-bottom: 50px" class="logo">
+						<div class="row">
+							<div class="off-1">
+								<input type="text" class="login" name="email" id="join_email"
+									placeholder="email" required="required" />
+							</div>
+							<div class="emailChkDisp hidden">
+								<span id="emailChkDisp"></span>
+							</div>
+							<div class="off-1">
+								<input type="password" class="login" name="password"
+									id="join_password" placeholder="Password" required="required" />
+							</div>
+							<div class="off-1">
+								<input type="password" class="login" name="password2"
+									id="join_password2" placeholder="Password Confirm"
+									required="required" /> <span id="passwordChkDisp"></span>
+							</div>
+
+							<div class="off-1">
+								<input type="text" class="login" name="name" placeholder="Name"
+									required="required" />
+							</div>
+							<div class="off-1">
+								<input type="text" class="login" name="nickName"
+									required="required" placeholder="Nickname" />
+							</div>
+							<div class="off-1">
+								<input type="text" class="login" name="tel" required="required"
+									placeholder="Tel 010-xxxx-xxxx" />
+							</div>
+							<div class="off-1">
+								<input type="submit" class="login" id="loginbutton" value="Join">
 							</div>
 							<a href="#LoginForm"><span>로그인화면</span></a>
 						</div>
