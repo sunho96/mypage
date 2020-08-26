@@ -6,14 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ch.mypage.model.Member;
+import com.ch.mypage.service.MemberService;
 import com.ch.mypage.service.MyPageService;
 
 @Controller
 public class MemberController {
 	@Autowired
 	private MyPageService ms;
+	@Autowired MemberService mbs;
 	
 	@RequestMapping("loginForm")
 	public String loginForm() {
@@ -53,10 +57,36 @@ public class MemberController {
 	public String table_form() {
 		return "table_form";
 	}
-	@RequestMapping("memberUpdate_form")
-	public String memberUpdate_form() {
-		
-		return "member/memberUpdate_form";
-	}
 	
+	
+	@RequestMapping(value="emailChk.do",  produces = "text/html;charset=utf-8")
+	@ResponseBody
+	public String emailChk(String email) {
+		String msg="";
+		
+		Member member = ms.select(email);
+		if(member == null) {
+			msg = "사용가능";
+		}else {
+			msg = "사용불가";
+		}
+		return msg;
+	}
+
+	@RequestMapping(value="join.do" , method = RequestMethod.POST)
+	public String join(Member member, Model model ) {
+		int result =0;
+		Member mem = mbs.select(member.getEmail());
+		
+		if(mem== null) {
+			result= mbs.insert(member);
+		}else result=-1;
+		
+		
+		model.addAttribute("result", result);
+		model.addAttribute("member", member);
+		
+		return "member/join";
+	}
+
 }

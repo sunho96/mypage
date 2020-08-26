@@ -8,11 +8,6 @@
 </head>
 <body>
 <script type="text/javascript">
-//	location.href="loginForm";
-//	location.href="loginForm";
-//	location.href="loginForm";
-//	location.href="loginForm"; zzzz
-//	location.href="loginForm"; 태윤
 	location.href="loginForm";
 </script>
 </body>

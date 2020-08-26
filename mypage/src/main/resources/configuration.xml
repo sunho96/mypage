@@ -5,8 +5,10 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 	<typeAliases>
 		<typeAlias alias="member" type="com.ch.mypage.model.Member"/>
+		<typeAlias alias="notice" type="com.ch.mypage.model.Notice"/>
 	</typeAliases>
 	<mappers>
 		<mapper	resource="member.xml" />
+		<mapper	resource="notice.xml" />
 	</mappers>
 </configuration>
