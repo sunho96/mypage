@@ -6,7 +6,6 @@
 <head>
 <title>table_form</title>
 <meta charset="UTF-8">
-<!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
 	href="table/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -41,7 +40,7 @@
 					<h2>NOTICE<p><p></h2>
 			
 				</header>
-				<div class="table100 ver1 m-b-110">
+				<div class="table100 ver1 m-b-110" align="center">
 				<!-- table_main.css -> .table100.ver1 th ->  배경 색상 조절 -->
 				<!-- 				   .table100.ver1 .table100-body tr:nth-child(even) -> 짝수간격으로 배경색 조절-->
 					<div class="table100-head">
@@ -149,7 +148,6 @@
 	</script>
 	<!--===============================================================================================-->
 	<script src="table/js/main.js"></script>
-	
 
 </body>
 </html>

@@ -37,6 +37,29 @@
 				function() {
 					$.post("emailChk.do", "email=" + $("#join_email").val(),
 							function(data) {
+<<<<<<< HEAD
+								if (data=="사용가능") {
+									emailChk = true;
+									$("#emailChkDisp").html("사용가능한 이메일입니다");
+
+								} else {
+									emailChk = false;
+									$("#emailChkDisp").html(
+											"이미 사용중인 이메일 입니다. 다른 이메일을 사용하세요");
+								}
+								$('.emailChkDisp').fadeIn('slow');
+							});
+				});
+
+		//회원가입시 패스워드 확인
+		$("#join_password2").focusout(function() {
+			if ($("#join_password2").val() != $("#join_password").val()) {
+				passChk = false;
+				$('.passwordChkDisp').fadeIn('slow');
+				$("#passwordChkDisp").text("패스워드를 다시 확인해주세요");
+			}else{
+				passChk=true;
+=======
 								if (data == "사용가능") {
 									emailChk = true;
 									$("#emailChkDisp").html("사용가능한 이메일입니다");
@@ -58,6 +81,7 @@
 				$("#passwordChkDisp").text("패스워드를 다시 확인해주세요");
 			} else {
 				passChk = true;
+>>>>>>> branch 'master' of https://github.com/sunho96/mypage.git
 			}
 		});
 	});
