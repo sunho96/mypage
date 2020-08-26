@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		canvas = document.getElementById("canvas");
+		context = canvas.getContext("2d");
+
+		currentX = canvas.width / 2;
+		currentY = canvas.height / 2;
+
+		star_img.src = "star.png";
+		star_img.onload = function() {
+			_Go();
+		};
+	};
+	function _Go() {
+		_MouseEvents();
+
+		setInterval(function() {
+			_DrawImage();
+		}, 1000 / 30);
+	}
+	function _DrawImage() {
+		  context.drawImage(star_img, currentX-(star_img.width/2), currentY-(star_img.height/2));
+		  setInterval(function() {
+			  _ResetCanvas()
+			  _DrawImage();
+			}, 1000/30);
+		}
+	
+	function _ResetCanvas() {
+		  context.fillStyle = '#fff';
+		  context.fillRect(0,0, canvas.width, canvas.height);
+		}
+	canvas.onmousedown = function(e) {
+	    var mouseX = e.pageX - this.offsetLeft;
+	    var mouseY = e.pageY - this.offsetTop;
+
+
+	    if (mouseX >= (currentX - star_img.width/2) &&
+	        mouseX <= (currentX + star_img.width/2) &&
+	        mouseY >= (currentY - star_img.height/2) &&
+	        mouseY <= (currentY + star_img.height/2)) {
+	      isDraggable = true;
+	    }
+	};
+	canvas.onmouseup = function(e) {
+	    isDraggable = false;
+	  };
+	  canvas.onmouseout = function(e) {
+		    isDraggable = false;
+		  };
+		  canvas.onmousemove = function(e) {
+			   if (isDraggable) {
+			      currentX = e.pageX - this.offsetLeft;
+			      currentY = e.pageY - this.offsetTop;
+			    }
+			 };
+</script>
+</head>
+<body>
+	<h1>Click Image then Drag</h1>
+
+	<canvas id="canvas" width="500" height="500"
+		style="border: 1px solid black">
+</canvas>
+</body>
+</html>
