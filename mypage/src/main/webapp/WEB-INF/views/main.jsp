@@ -19,6 +19,9 @@
 		<img alt="" src="images/logo_white1.png">
 	</div>
 	<a href="logout">로그아웃</a>
+	<a href="table_form">테이블</a>
+	<a href="memberUpdate_form">회원정보수정</a>
+
 	<!-- Wrapper-->
 	<div id="wrapper">
 
@@ -111,6 +114,7 @@
 
 			<!-- Notice -->
 			<article id="notice" class="panel">		
+				<div id="notice"></div>
 			<!-- 	<div id="notice"></div> -->
 			</article>
 

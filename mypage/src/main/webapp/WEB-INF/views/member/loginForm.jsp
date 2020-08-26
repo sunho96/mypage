@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -37,7 +37,7 @@
 				function() {
 					$.post("emailChk.do", "email=" + $("#join_email").val(),
 							function(data) {
-								if (data == "사용가능") {
+								if (data=="사용가능") {
 									emailChk = true;
 									$("#emailChkDisp").html("사용가능한 이메일입니다");
 
@@ -56,8 +56,8 @@
 				passChk = false;
 				$('.passwordChkDisp').fadeIn('slow');
 				$("#passwordChkDisp").text("패스워드를 다시 확인해주세요");
-			} else {
-				passChk = true;
+			}else{
+				passChk=true;
 			}
 		});
 	});
@@ -91,16 +91,74 @@
 						<div class="row">
 							<div class="off-1">
 								<input type="text" class="login" name="email"
-									placeholder="Email" required="required" />
+									placeholder="Email" required="required"/>
 							</div>
 							<div class="off-1">
 								<input type="password" class="login" name="password"
-									placeholder="Password" required="required" />
+									placeholder="Password" required="required"/>
 							</div>
 							<div class="off-1">
 								<input type="submit" class="login" id="loginbutton"
 									value="login">
 							</div>
+							<a href="#JoinForm"><span>회원가입</span></a>
+						</div>
+					</div>
+				</form>
+			</article>
+			
+			<!-- JoinForm -->
+			<article id="JoinForm" class="panel">
+				<form action="join.do" method="post" name="frmJ"
+					onsubmit="return join_submitChk()">
+					<div align="center">
+						<img alt="" src="images/logo_white1.png" width="120%"
+							style="padding-bottom: 50px" class="logo">
+						<div class="row">
+							<div class="off-1">
+								<input type="text" class="login" name="email" id="join_email"
+									placeholder="email" required="required" />
+							</div>
+							<div class="emailChkDisp hidden">
+								<span id="emailChkDisp"></span>
+							</div>
+							<div class="off-1">
+								<input type="password" class="login" name="password"
+									id="join_password" placeholder="Password" required="required" />
+							</div>
+							<div class="off-1">
+								<input type="password" class="login" name="password2"
+									id="join_password2" placeholder="Password Confirm"
+									required="required" />
+									<span id="passwordChkDisp"></span>
+							</div>
+
+							<div class="off-1">
+								<input type="text" class="login" name="name" placeholder="Name"
+									required="required" />
+							</div>
+							<div class="off-1">
+								<input type="text" class="login" name="nickName"
+									required="required" placeholder="Nickname" />
+							</div>
+							<div class="off-1">
+								<input type="text" class="login" name="tel"
+									required="required" placeholder="Tel 010-xxxx-xxxx" />
+							</div>
+							<div class="off-1">
+<<<<<<< HEAD
+								<input type="submit" class="login" id="joinBtn" value="Join">
+=======
+								<input type="submit" class="login" id="loginbutton" value="Join">
+>>>>>>> refs/remotes/origin/master
+							</div>
+							<a href="#LoginForm"><span>로그인화면</span></a>
+							<a href="#JoinForm"><span>회원가입</span></a>
+							<a href="#JoinForm"><span>회원가입</span></a>
+							<a href="#JoinForm"><span>회원가입</span></a>
+							<a href="#JoinForm"><span>회원가입</span></a>
+							<a href="#JoinForm"><span>회원가입</span></a>
+							<a href="#JoinForm"><span>회원가입</span></a>
 							<a href="#JoinForm"><span>회원가입</span></a>
 						</div>
 					</div>
