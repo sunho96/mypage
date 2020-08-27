@@ -7,10 +7,12 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias alias="member" type="com.ch.mypage.model.Member"/>
 		<typeAlias alias="notice" type="com.ch.mypage.model.Notice"/>
 		<typeAlias alias="diary" type="com.ch.mypage.model.Diary"/>
+		<typeAlias alias="diaryCatagory" type="com.ch.mypage.model.DiaryCatagory"/>
 	</typeAliases>
 	<mappers>
 		<mapper	resource="member.xml" />
 		<mapper	resource="notice.xml" />
 		<mapper	resource="diary.xml" />
+		<mapper	resource="diaryCatagory.xml" />
 	</mappers>
 </configuration>

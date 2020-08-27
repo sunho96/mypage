@@ -1,5 +1,6 @@
 select * from notice;
-
+select * from diary;
+insert into diary values(diary_seq.nextval,'test','test',sysdate,sysdate,'n',1,1);
 select* from member;
 -- 01. 회원 
 create table member(

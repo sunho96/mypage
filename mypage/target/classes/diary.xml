@@ -13,6 +13,6 @@
 		<result property="memberNum" column="memberNum"/>
 	</resultMap>
 	<insert id="insert" parameterType="diary">
-		insert into diary values()
+		insert into diary values(diary_seq.nextval,#{subject},#{content},sysdate,sysdate,'n',1,#{memberNum})
 	</insert>
 </mapper>

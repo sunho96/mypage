@@ -19,8 +19,7 @@
 			</tr>
 			<tr>
 				<th>내용</th>
-				<td><pre>
-					<textarea rows="5" cols="10" name="content" required="required">${notice.content }</textarea>
+				<td><pre><textarea rows="5" cols="10" name="content" required="required">${notice.content }</textarea>
 				</pre></td>
 			</tr>
 			<tr>

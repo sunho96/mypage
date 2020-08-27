@@ -36,7 +36,7 @@ public class MemberController {
 			if (mem.getPassword().equals(member.getPassword())) { // 비밀번호까지 맞는 경우
 				result = 1;
 				//세션
-				session.setAttribute("memberNum", member.getMemberNum());
+				session.setAttribute("memberNum", mem.getMemberNum());
 				model.addAttribute("member", member);
 			}
 		}

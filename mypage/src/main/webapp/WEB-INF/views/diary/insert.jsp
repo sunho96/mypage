@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@include file="../header.jsp" %>
+    <%@include file="../header.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +8,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:set var="memberNum" value="${sessionScope.memberNum }"/>
-<c:if test="${empty memberNum }">
+<c:if test="${result>0 }">
 	<script type="text/javascript">
-	alert("로그인이 필요한 서비스입니다.");
-	location.href="loginForm";
+		location.href="${path}/main";
+	</script>
+</c:if>
+<c:if test="${result==0 }">
+	<script type="text/javascript">
+		alert("다이어리 입력 실패");
+		history.go(-1);
 	</script>
 </c:if>
 </body>

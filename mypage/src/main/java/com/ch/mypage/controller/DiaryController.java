@@ -19,9 +19,9 @@ public class DiaryController {
 	}
 	@RequestMapping("diary/insert")
 	public String insert(Diary diary, Model model) {
+		System.out.println("diary들어오나..");
 		int result = ds.insert(diary);
-		
+		model.addAttribute("result", result);
 		return "diary/insert";
 	}
-
 }

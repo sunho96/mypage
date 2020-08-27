@@ -34,17 +34,16 @@ public class NoticeController {
 		return "notice/insert";
 
 	}
-	@RequestMapping("notice/select")
+	@RequestMapping("notice/view")
 	public String select(int noticeNum, Model model) {
 		Notice notice = ns.select(noticeNum);
 		model.addAttribute("notice",notice);
-		return "notice/select";
+		return "notice/view";
 		
 	}
 	@RequestMapping("notice/updateForm")
 	public String updateForm(int noticeNum,Model model) {
 		Notice notice = ns.select(noticeNum);
-		System.out.println("notice comeon");
 		model.addAttribute("notice",notice);
 		return "notice/updateForm";
 		
