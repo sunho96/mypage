@@ -14,6 +14,8 @@
 .login {
 	height: 80%;
 	border-radius: 10px;
+	outline: none;
+	border : none;
 }
 
 .login:hover {
@@ -51,6 +53,7 @@
 	text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px
 		#000000;
 }
+
 </style>
 <script src="assets/js/jquery.min.js"></script>
 <script type="text/javascript">
@@ -128,8 +131,8 @@
 								<input type="submit" class="login" id="loginbutton"
 									value="login">
 							</div>
-							<div class="off-1">
-							<a href="#JoinForm" class="login"><span>회원가입</span></a>
+							<div class="off-1" align="right">
+							<input type="button" class="login" onclick="location.href='#JoinForm'" value="join us?" >
 							</div>
 							.   
 						</div>
@@ -180,7 +183,9 @@
 							<div class="off-1">
 								<input type="submit" class="login" id="loginbutton" value="Join">
 							</div>
-							<a href="#LoginForm"><span>로그인화면</span></a>
+							<div class="off-1" align="right" >
+							<input type="button" class="login" onclick="location.href='#LoginForm'" value="login" style="padding: auto;" >
+							</div>
 						</div>
 					</div>
 				</form>
