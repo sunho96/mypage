@@ -39,4 +39,15 @@ public class DiaryController {
 		model.addAttribute("list",list);
 		return "diary/list";
 	}
+	@RequestMapping("diary/view")
+	public String view(int diaryNum, Model model) {
+		Diary diary = ds.select(diaryNum);
+		System.out.println("diary memberNum"+diary.getMemberNum());
+		model.addAttribute("diary",diary);
+		return "diary/view";
+		
+	}
+//	
+//	@RequestMapping("diary/updateForm")
+//	public String updateForm(int )
 }

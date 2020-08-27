@@ -18,4 +18,7 @@
 	<select id="list" parameterType="int" resultMap="diaryResult">
 		select * from diary where memberNum = #{memberNum} order by regDate desc
 	</select>
+	<select id="select" parameterType="int" resultType="diary">
+		select * from diary where diaryNum=#{diaryNum}
+	</select>
 </mapper>

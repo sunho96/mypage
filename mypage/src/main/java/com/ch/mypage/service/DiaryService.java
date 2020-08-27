@@ -10,4 +10,6 @@ public interface DiaryService {
 
 	List<Diary> list(int memberNum);
 
+	Diary select(int diaryNum);
+
 }

@@ -24,4 +24,10 @@ public class DiaryDaoImpl implements DiaryDao{
 		
 		return sst.selectList("diaryns.list",memberNum);
 	}
+
+	@Override
+	public Diary select(int diaryNum) {
+	
+		return sst.selectOne("diaryns.select",diaryNum);
+	}
 }

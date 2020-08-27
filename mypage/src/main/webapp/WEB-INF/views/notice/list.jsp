@@ -38,8 +38,6 @@
 
 			<div class="wrap-table100">
 				<div class="table100 ver1 m-b-110" align="center">
-					<!-- table_main.css -> .table100.ver1 th ->  배경 색상 조절 -->
-					<!-- 				   .table100.ver1 .table100-body tr:nth-child(even) -> 짝수간격으로 배경색 조절-->
 					<div class="table100-head">
 						<table>
 							<thead>
@@ -68,7 +66,6 @@
 					</div>
 
 				</div>
-				<%-- <a href="${path }/notice/insertForm">입력</a> --%>
 			</div>
 		</div>
 	</div>

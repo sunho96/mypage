@@ -24,4 +24,10 @@ public class DiaryServiceImpl implements DiaryService {
 		
 		return dd.list(memberNum);
 	}
+
+	@Override
+	public Diary select(int diaryNum) {
+		
+		return dd.select(diaryNum);
+	}
 }

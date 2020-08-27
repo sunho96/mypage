@@ -57,8 +57,8 @@
 								<c:forEach var="d" items="${list }">
 									<tr class="row100 body">
 										<td class="cell100 column1">${d.diaryNum }</td>
-										<td class="cell100 column1"><a
-											href="diary/view?diaryNum=${d.diaryNum }">${d.subject }</a></td>
+										<td class="cell100 column1">
+										<a href="diary/view?diaryNum=${d.diaryNum}">${d.subject }</a></td>
 										<td class="cell100 column1">${d.regDate }</td>
 									</tr>
 								</c:forEach>

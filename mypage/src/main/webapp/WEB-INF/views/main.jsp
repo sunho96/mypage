@@ -16,6 +16,7 @@
 		});
 		$("#diaryInsertForm").load("diary/insertForm");
 		$("#diaryList").load("diary/list");
+		$("#diaryView").load("diary/view");
 	})
 </script>
 </head>
@@ -64,6 +65,7 @@
 				</header>
 				<div id="diaryInsertForm"></div>
 			</article>
+			
 			<!-- DiaryList -->
 			<article id="diaryList" class="panel">
 				<header>
@@ -71,6 +73,14 @@
 					<h5>read your story</h5>
 				</header>
 				<div id="diaryList"></div>
+			</article>
+		
+			<!-- DiaryView -->
+			<article id="diaryView" class="panel">
+				<header>
+					<h2>Diary</h2>
+				</header>
+				<div id="diaryView"></div>
 			</article>
 
 			<!-- Notice -->
