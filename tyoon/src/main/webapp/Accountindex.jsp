@@ -6,9 +6,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<!-- <script type="text/javascript">
-		location.href = "main"
-	</script> -->
-	<%@ include file="AccountMain.jsp"%>
+	<%
+		session.setAttribute("memberNum", 101);
+	%>
+	<script type="text/javascript">
+		location.href = "AccountMain"
+	</script>
 </body>
 </html>
