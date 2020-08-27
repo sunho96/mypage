@@ -17,4 +17,8 @@ public class AccountBookDaoImpl implements AccountBookDao {
 		return sst.selectList("accountbookns.AccountBookList", accountNum);
 	}
 
+	public int AccountInsert(AccountBook accountBook) {
+		return sst.insert("accountbookns.AccountInsert", accountBook);
+	}
+
 }

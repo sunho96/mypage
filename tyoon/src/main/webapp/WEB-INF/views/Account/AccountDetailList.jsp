@@ -9,9 +9,9 @@
 <body>
 	세션 아이디 : ${sessionScope.memberNum }
 
-	<h2>계좌번호 : ${accountbook }</h2>
+	<h2>계좌번호 : ${accountNum }</h2>
 	<hr>
-	<a href="AccountDetailInsertForm">계좌 상세내역 추가하기</a>
+	<a href="AccountDetailInsertForm?accountNum=${accountNum }">계좌 상세내역 추가하기</a>
 	<hr>
 	<table>
 		<tr>
