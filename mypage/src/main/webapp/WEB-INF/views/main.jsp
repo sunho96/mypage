@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-	<%@ include file="member/sessionChk.jsp" %>
-	<%@ include file="header.jsp" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="member/sessionChk.jsp"%>
+<%@ include file="header.jsp"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -9,20 +8,16 @@
 <meta charset="utf-8" />
 <link rel="stylesheet" href="assets/css/main.css" />
 <script type="text/javascript">
-	$(function () {
-		$("#notice").load("notice/list");
+	$(function() {
+		$("#notice1").load("notice/list");
 		$("#noticeInsertForm").click(function() {
-			$("#notice").load("notice/insertForm");
+			$("#notice1").load("notice/insertForm");
 		})
 	})
-	
-	
-	
-
 </script>
 </head>
 <body class="is-preload">
-	
+
 	<div id="logo" align="center" style="margin-top: 50px;">
 		<img alt="" src="images/logo_white1.png">
 	</div>
@@ -35,12 +30,9 @@
 
 		<!-- Nav -->
 		<nav id="nav">
-			<a href="#" class="icon solid fa-home"><span>Home</span></a> <a
-				href="#contact" class="icon solid fa-piggy-bank"><span>AccountBook</span></a>
-			<a href="#work" class="icon solid fa-pen"><span>Write</span></a> <a
-				href="notice/insertForm" class="icon solid fa-book"><span>Diary</span></a>
-			<a href="#notice" class="icon solid fa-book"><span>notice</span></a>
-			<a href="https://twitter.com/ajlkn" class="icon brands fa-instagram"><span>Community</span></a>
+			<a href="#" class="icon solid fa-home"><span>Home</span></a> <a href="#contact" class="icon solid fa-piggy-bank"><span>AccountBook</span></a> <a href="#work" class="icon solid fa-pen"><span>Write</span></a>
+			<a href="notice/insertForm" class="icon solid fa-book"><span>Diary</span></a> <a href="#notice" class="icon solid fa-book"><span>notice</span></a> <a href="https://twitter.com/ajlkn"
+				class="icon brands fa-instagram"><span>Community</span></a>
 		</nav>
 
 		<!-- Main -->
@@ -52,9 +44,7 @@
 					<h1>Jane Doe</h1>
 					<p>Senior Astral Projectionist</p>
 				</header>
-				<a href="#work" class="jumplink pic"> <span
-					class="arrow icon solid fa-chevron-right"><span>See
-							my work</span></span> <img src="images/me.jpg" alt="" />
+				<a href="#work" class="jumplink pic"> <span class="arrow icon solid fa-chevron-right"><span>See my work</span></span> <img src="images/me.jpg" alt="" />
 				</a>
 			</article>
 
@@ -63,70 +53,56 @@
 				<header>
 					<h2>Work</h2>
 				</header>
-				<p>Phasellus enim sapien, blandit ullamcorper elementum eu,
-					condimentum eu elit. Vestibulum ante ipsum primis in faucibus orci
-					luctus et ultrices posuere cubilia luctus elit eget interdum.</p>
+				<p>Phasellus enim sapien, blandit ullamcorper elementum eu, condimentum eu elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia luctus elit eget interdum.</p>
 				<section>
 					<div class="row">
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic01.jpg"
-								alt=""></a>
+							<a href="#" class="image fit"><img src="images/pic01.jpg" alt=""></a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic02.jpg"
-								alt=""></a>
+							<a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic03.jpg"
-								alt=""></a>
+							<a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic04.jpg"
-								alt=""></a>
+							<a href="#" class="image fit"><img src="images/pic04.jpg" alt=""></a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic05.jpg"
-								alt=""></a>
+							<a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic06.jpg"
-								alt=""></a>
+							<a href="#" class="image fit"><img src="images/pic06.jpg" alt=""></a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic07.jpg"
-								alt=""></a>
+							<a href="#" class="image fit"><img src="images/pic07.jpg" alt=""></a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic08.jpg"
-								alt=""></a>
+							<a href="#" class="image fit"><img src="images/pic08.jpg" alt=""></a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic09.jpg"
-								alt=""></a>
+							<a href="#" class="image fit"><img src="images/pic09.jpg" alt=""></a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic10.jpg"
-								alt=""></a>
+							<a href="#" class="image fit"><img src="images/pic10.jpg" alt=""></a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic11.jpg"
-								alt=""></a>
+							<a href="#" class="image fit"><img src="images/pic11.jpg" alt=""></a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic12.jpg"
-								alt=""></a>
+							<a href="#" class="image fit"><img src="images/pic12.jpg" alt=""></a>
 						</div>
 					</div>
 				</section>
 			</article>
 
 			<!-- Notice -->
-			<article id="notice" class="panel">		
-				<div id="notice" align="center"></div>
+			<article id="notice" class="panel">
+			<div id="notice1" align="center">
+				</div>
 				<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pic12.jpg"
-								alt=""></a>
-						</div>
+					<a href="#" class="image fit"><img src="images/pic12.jpg" alt=""> </a>
+				</div>
 			</article>
 
 		</div>
