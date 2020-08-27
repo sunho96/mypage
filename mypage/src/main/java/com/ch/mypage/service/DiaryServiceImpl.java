@@ -1,5 +1,7 @@
 package com.ch.mypage.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +17,11 @@ public class DiaryServiceImpl implements DiaryService {
 	public int insert(Diary diary) {
 		
 		return dd.insert(diary);
+	}
+
+	@Override
+	public List<Diary> list(int memberNum) {
+		
+		return dd.list(memberNum);
 	}
 }

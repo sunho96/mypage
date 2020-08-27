@@ -11,7 +11,7 @@
 <c:if test="${result>0 }">
 	<script type="text/javascript">
 		alert("게시글 삭제 성공");
-		location.href="${path}/main";
+		location.href="${path}/main#notice";
 	</script>
 </c:if>
 <c:if test="${result==0 }">

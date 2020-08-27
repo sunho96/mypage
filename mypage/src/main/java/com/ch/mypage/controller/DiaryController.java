@@ -1,5 +1,9 @@
 package com.ch.mypage.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,5 +31,12 @@ public class DiaryController {
 		System.out.println("result="+result);
 		model.addAttribute("result", result);
 		return "diary/insert";
+	}
+	@RequestMapping("diary/list")
+	public String list(HttpSession session,Model model) {
+		int memberNum= (Integer) session.getAttribute("memberNum");
+		List<Diary> list = ds.list(memberNum);
+		model.addAttribute("list",list);
+		return "diary/list";
 	}
 }

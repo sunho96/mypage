@@ -9,20 +9,14 @@
 <meta charset="UTF-8">
 </head>
 <body>
-<form action="diary/insert" method="post">
+<form action="notice/insert" method="post">
 <input type="hidden" name="memberNum" value="${memberNum}">
-	<table border="1">
-		<tr>
-			<th>제목</th>
-			<td><input type="text" name="subject" required="required" autofocus="autofocus"></td>
-		</tr>
-		<tr>
-			<th>내용</th>
-			<td><pre><textarea rows="20" cols="40" name="content" required="required"></textarea>
-				</pre></td>
-		</tr>
-		<tr>
-			<th colspan="2"><input type="submit" value="확인"></th>
+<table>
+		<tr><th>subject</th></tr>
+		<tr><td><input type="text" name="subject" required="required" autofocus="autofocus" name="subject" width="100px"></td></tr>
+		<tr><th align="center">content</th></tr>
+		<tr><td><pre><textarea cols="100" rows="30" name="content"></textarea></pre></td></tr>
+		<tr><td align="center"><input type="submit"></td></tr>
 	</table>
 	</form>
 </body>

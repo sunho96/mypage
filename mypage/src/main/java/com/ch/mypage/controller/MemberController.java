@@ -53,11 +53,6 @@ public class MemberController {
 		session.invalidate();
 		return "member/loginForm";
 	}
-	@RequestMapping("table_form")
-	public String table_form() {
-		return "table_form";
-	}
-	
 	
 	@RequestMapping(value="emailChk.do",  produces = "text/html;charset=utf-8")
 	@ResponseBody

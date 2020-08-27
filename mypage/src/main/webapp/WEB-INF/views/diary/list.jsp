@@ -54,12 +54,12 @@
 					<div class="table100-body js-pscroll">
 						<table>
 							<tbody>
-								<c:forEach var="n" items="${list }">
+								<c:forEach var="d" items="${list }">
 									<tr class="row100 body">
-										<td class="cell100 column1">${n.noticeNum }</td>
+										<td class="cell100 column1">${d.diaryNum }</td>
 										<td class="cell100 column1"><a
-											href="notice/view?noticeNum=${n.noticeNum }">${n.subject }</a></td>
-										<td class="cell100 column1">${n.regDate }</td>
+											href="diary/view?diaryNum=${d.diaryNum }">${d.subject }</a></td>
+										<td class="cell100 column1">${d.regDate }</td>
 									</tr>
 								</c:forEach>
 							</tbody>

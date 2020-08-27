@@ -1,5 +1,7 @@
 package com.ch.mypage.dao;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,5 +17,11 @@ public class DiaryDaoImpl implements DiaryDao{
 	public int insert(Diary diary) {
 		
 		return sst.insert("diaryns.insert",diary);
+	}
+
+	@Override
+	public List<Diary> list(int memberNum) {
+		
+		return sst.selectList("diaryns.list",memberNum);
 	}
 }

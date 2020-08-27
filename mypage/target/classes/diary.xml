@@ -15,4 +15,7 @@
 	<insert id="insert" parameterType="diary">
 		insert into diary values(diary_seq.nextval,#{subject},#{content},sysdate,sysdate,'n',1,#{memberNum})
 	</insert>
+	<select id="list" parameterType="int" resultMap="diaryResult">
+		select * from diary where memberNum = #{memberNum} order by regDate desc
+	</select>
 </mapper>
