@@ -13,13 +13,11 @@ public class MemberDaoImpl implements MemberDao {
 
 	@Override
 	public int insert(Member member) {
-		// TODO Auto-generated method stub
 		return sst.insert("memberns.insert",member);
 	}
 
 	@Override
 	public Member select(String email) {
-		// TODO Auto-generated method stub
 		System.out.println(email);
 		return sst.selectOne("memberns.select",email);
 	}

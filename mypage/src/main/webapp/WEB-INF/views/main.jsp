@@ -11,7 +11,14 @@
 <script type="text/javascript">
 	$(function () {
 		$("#notice").load("notice/list");
+		$("#noticeInsertForm").click(function() {
+			$("#notice").load("notice/insertForm");
+		})
 	})
+	
+	
+	
+
 </script>
 </head>
 <body class="is-preload">
@@ -31,7 +38,7 @@
 			<a href="#" class="icon solid fa-home"><span>Home</span></a> <a
 				href="#contact" class="icon solid fa-piggy-bank"><span>AccountBook</span></a>
 			<a href="#work" class="icon solid fa-pen"><span>Write</span></a> <a
-				href="loginForm" class="icon solid fa-book"><span>Diary</span></a>
+				href="notice/insertForm" class="icon solid fa-book"><span>Diary</span></a>
 			<a href="#notice" class="icon solid fa-book"><span>notice</span></a>
 			<a href="https://twitter.com/ajlkn" class="icon brands fa-instagram"><span>Community</span></a>
 		</nav>
@@ -116,6 +123,10 @@
 			<!-- Notice -->
 			<article id="notice" class="panel">		
 				<div id="notice" align="center"></div>
+				<div class="col-4 col-6-medium col-12-small">
+							<a href="#" class="image fit"><img src="images/pic12.jpg"
+								alt=""></a>
+						</div>
 			</article>
 
 		</div>

@@ -1,4 +1,4 @@
-
+select * from notice;
 
 select* from member;
 -- 01. 회원 

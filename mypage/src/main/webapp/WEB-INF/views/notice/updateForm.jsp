@@ -30,21 +30,24 @@
 <!--===============================================================================================-->
 </head>
 <body>
-<form action="${path }/notice/insert" method="post">
-	<table border="1">
-		<tr>
-			<th>제목</th>
-			<td><input type="text" name="subject" required="required" autofocus="autofocus"></td>
-		</tr>
-		<tr>
-			<th>내용</th>
-			<td><pre>
-					<textarea rows="5" cols="10" name="content" required="required"></textarea>
+	<form action="${path }/notice/update" method="post">
+		<input type="hidden" name="noticeNum" value="${notice.noticeNum }">
+		<table border="1">
+			<tr>
+				<th>제목</th>
+				<td><input type="text" name="subject"
+					value="${notice.subject }" required="required"
+					autofocus="autofocus"></td>
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td><pre>
+					<textarea rows="5" cols="10" name="content" required="required">${notice.content }</textarea>
 				</pre></td>
-		</tr>
-		<tr>
-			<th colspan="2"><input type="submit" value="확인"></th>
-	</table>
+			</tr>
+			<tr>
+				<th colspan="2"><input type="submit" value="확인"></th>
+		</table>
 	</form>
 
 	<!--===============================================================================================-->
