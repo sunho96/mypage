@@ -20,11 +20,13 @@
 		$("#diaryView").load("diary/view");
 	})
 </script>
+<style type="text/css">
+</style>
 </head>
 <body class="is-preload">
 
 	<div id="logo" align="center" style="margin-top: 50px;">
-		<img alt="" src="images/logo_white1.png" width="200px">
+		<img alt="" src="images/logo_white1.png" width="280px">
 	</div>
 	<div align="right">
 		<a href="logout" style="color: white;">로그아웃 </a> <a
@@ -49,8 +51,8 @@
 			<!-- Me -->
 			<article id="home" class="panel intro">
 				<header>
-					<h1>${member.nickName }</h1>
-					<p>환영합니다. 당신의 웹다이어리 My Page</p>
+					<h1 style="font-family:'Cafe24'; font-size: 50px" >${member.nickName }</h1>
+					<p>당신의 웹다이어리<span style="font-family: 'Dynalight'; font-size: 50px "> My Page</span></p>
 				</header>
 				<a href="#work" class="jumplink pic"> <span
 					class="arrow icon solid fa-chevron-right"><span>See

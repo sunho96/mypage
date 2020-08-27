@@ -62,11 +62,12 @@
 								</c:forEach>
 							</tbody>
 						</table>
-						<button onclick=""></button>
+					
 					</div>
 
 				</div>
 			</div>
+				<button onclick="location.href='${path}/main#notice'">입력</button>
 		</div>
 	</div>
 
