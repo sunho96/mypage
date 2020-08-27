@@ -42,9 +42,10 @@
 						<table>
 							<thead>
 								<tr class="row100 head">
-									<th class="cell100 column1">번호</th>
 									<th class="cell100 column1">제목</th>
-									<th class="cell100 column1">날짜</th>
+									<th class="cell100 column2">날짜</th>
+									<th class="cell100 column3">복구</th>
+									<th class="cell100 column4">삭제</th>
 								</tr>
 							</thead>
 						</table>
@@ -56,10 +57,11 @@
 								<c:forEach var="d" items="${list }">
 									<c:if test="${d.del=='y' }">
 										<tr class="row100 body">
-											<td class="cell100 column1">${d.diaryNum }</td>
 											<td class="cell100 column1"><a
 												href="diary/view?diaryNum=${d.diaryNum}">${d.subject }</a></td>
-											<td class="cell100 column1">${d.regDate }</td>
+											<td class="cell100 column2">${d.regDate }</td>
+											<td class="cell100 column3"><button onclick="save(${d.diaryNum})" >복구</button></td>
+											<td class="cell100 column4"><button onclick="delete(${d.diaryNum})">삭제</button></td>
 										</tr>
 									</c:if>
 								</c:forEach>

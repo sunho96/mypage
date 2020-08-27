@@ -16,9 +16,15 @@
 	<select id="select" parameterType="string" resultType="member">
 		select * from member where email=#{email}
 	</select>
-	
+	<select id="selectMember" parameterType="int" resultType="member">
+		select * from member where memberNum=#{memberNum}
+	</select>
 	<insert id="insert" parameterType="member">
 		insert into member values
 			(member_seq.nextval,#{email},#{password},#{name},#{nickName},#{tel},sysdate,'n')
 	</insert>
+	<!-- 회원정보 수정 -->
+	<update id="update" parameterType="member">
+	update member set email=#{email},password=#{password},name=#{name},nickName=#{nickName},tel=#{tel} where memberNum=#{memberNum}
+	</update>
 </mapper>

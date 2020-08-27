@@ -37,9 +37,9 @@
 		<nav id="nav">
 			<a href="#" class="icon solid fa-home"><span>Home</span></a> <a
 				href="#contact" class="icon solid fa-piggy-bank"><span>AccountBook</span></a>
-			<a href="#diaryWrite" class="icon solid fa-pen"><span>write
-					Diary</span></a> <a href="#diaryList" class="icon solid fa-book"><span>read
-					Diary</span></a> <a href="#notice" class="icon solid fa-bullhorn"><span>notice</span></a>
+			<a href="#diaryWrite" class="icon solid fa-pen"><span>write Diary</span></a> 
+			<a href="#diaryList" class="icon solid fa-book"><span>read Diary</span></a> 
+			<a href="#notice" class="icon solid fa-bullhorn"><span>notice</span></a>
 			<a href="https://twitter.com/ajlkn" class="icon brands fa-instagram"><span>Community</span></a>
 		</nav>
 
@@ -49,8 +49,8 @@
 			<!-- Me -->
 			<article id="home" class="panel intro">
 				<header>
-					<h1>Jane Doe</h1>
-					<p>Senior Astral Projectionist</p>
+					<h1>${member.nickName }</h1>
+					<p>환영합니다. 당신의 웹다이어리 mypage</p>
 				</header>
 				<a href="#work" class="jumplink pic"> <span
 					class="arrow icon solid fa-chevron-right"><span>See

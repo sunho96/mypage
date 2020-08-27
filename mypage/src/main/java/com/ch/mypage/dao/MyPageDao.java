@@ -5,5 +5,7 @@ import com.ch.mypage.model.Member;
 public interface MyPageDao {
 
 	Member select(String email);
+
+	Member selectMember(int memberNum);
 	
 }

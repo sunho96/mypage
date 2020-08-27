@@ -6,4 +6,6 @@ public interface MyPageService {
 
 	Member select(String email);
 
+	Member selectMember(int memberNum);
+
 }

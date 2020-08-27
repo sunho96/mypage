@@ -16,4 +16,10 @@ public class MyPageDaoImpl implements MyPageDao {
 		
 		return sst.selectOne("memberns.select",email);
 	}
+
+	@Override
+	public Member selectMember(int memberNum) {
+	
+		return sst.selectOne("memberns.selectMember",memberNum);
+	}
 }

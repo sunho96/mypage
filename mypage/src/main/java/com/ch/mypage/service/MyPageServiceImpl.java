@@ -16,4 +16,10 @@ public class MyPageServiceImpl implements MyPageService {
 		
 		return md.select(email);
 	}
+
+	@Override
+	public Member selectMember(int memberNum) {
+		
+		return md.selectMember(memberNum);
+	}
 }

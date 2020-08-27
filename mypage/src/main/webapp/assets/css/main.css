@@ -1873,7 +1873,7 @@ input, select, textarea {
 	#wrapper {
 		width: 45em;
 		margin: 0 auto;
-		min-height: 100vh;
+		min-height: 50vh; /*로고와 박스의 최소 길이  */
 		max-width: 100%;
 		padding: 4em 0;
 		display: -moz-flex;
@@ -1990,8 +1990,9 @@ input, select, textarea {
 			}
 
 			#main > .panel.intro {
+				width: 80em;/* main home 가로 길이 */
 				padding: 0;
-				height: 20em;
+				height: 35em; /* main home 세로 길이 */
 				display: -moz-flex;
 				display: -webkit-flex;
 				display: -ms-flex;
