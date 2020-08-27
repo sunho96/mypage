@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="diaryns">
+	<resultMap type="diary" id="diaryResult">
+		<result property="diaryNum" column="diaryNum"/>
+		<result property="subject" column="subject"/>
+		<result property="content" column="content"/>
+		<result property="regDate" column="regDate"/>
+		<result property="updateDate" column="updateDate"/>
+		<result property="del" column="del"/>
+		<result property="diaryCataNum" column="diaryCataNum"/>
+		<result property="memberNum" column="memberNum"/>
+	</resultMap>
+	<insert id="insert" parameterType="diary">
+		insert into diary values()
+	</insert>
+</mapper>

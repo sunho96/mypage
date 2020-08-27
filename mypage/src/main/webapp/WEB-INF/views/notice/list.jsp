@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <title>table_form</title>
 <meta charset="UTF-8">
@@ -40,8 +40,7 @@
 				<header>
 					<h2>
 						NOTICE
-						<p>
-						<p>
+				
 					</h2>
 
 				</header>
@@ -66,7 +65,7 @@
 									<tr class="row100 body">
 										<td class="cell100 column1">${n.noticeNum }</td>
 										<td class="cell100 column1"><a
-											href="notice/select?noticeNum=${n.noticeNum }">${n.subject }</a></td>
+											href="notice/view?noticeNum=${n.noticeNum }">${n.subject }</a></td>
 										<td class="cell100 column1">${n.regDate }</td>
 									</tr>
 								</c:forEach>
