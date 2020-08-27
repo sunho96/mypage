@@ -30,4 +30,16 @@ public class DiaryServiceImpl implements DiaryService {
 		
 		return dd.select(diaryNum);
 	}
+
+	@Override
+	public int update(Diary diary) {
+		
+		return dd.update(diary);
+	}
+
+	@Override
+	public int delete(int diaryNum) {
+		
+		return dd.delete(diaryNum);
+	}
 }

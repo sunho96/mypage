@@ -37,9 +37,10 @@
 		<div class="container-table10">
 
 			<div class="wrap-table100">
+				<header>
+					<h2>Diary</h2>
+				</header>
 				<div class="table100 ver1 m-b-110" align="center">
-					<!-- table_main.css -> .table100.ver1 th ->  배경 색상 조절 -->
-					<!-- 				   .table100.ver1 .table100-body tr:nth-child(even) -> 짝수간격으로 배경색 조절-->
 					<div class="table100-head">
 						<table>
 							<thead>
@@ -54,13 +55,16 @@
 					<div class="table100-body js-pscroll">
 						<table>
 							<tbody>
+
 								<c:forEach var="d" items="${list }">
-									<tr class="row100 body">
-										<td class="cell100 column1">${d.diaryNum }</td>
-										<td class="cell100 column1">
-										<a href="diary/view?diaryNum=${d.diaryNum}">${d.subject }</a></td>
-										<td class="cell100 column1">${d.regDate }</td>
-									</tr>
+									<c:if test="${d.del=='n' }">
+										<tr class="row100 body">
+											<td class="cell100 column1">${d.diaryNum }</td>
+											<td class="cell100 column1"><a
+												href="diary/view?diaryNum=${d.diaryNum}">${d.subject }</a></td>
+											<td class="cell100 column1">${d.regDate }</td>
+										</tr>
+									</c:if>
 								</c:forEach>
 							</tbody>
 						</table>

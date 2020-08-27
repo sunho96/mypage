@@ -21,4 +21,10 @@
 	<select id="select" parameterType="int" resultType="diary">
 		select * from diary where diaryNum=#{diaryNum}
 	</select>
+	<update id="update" parameterType="diary">
+		update diary set subject = #{subject}, content=#{content}, updateDate=sysdate where diaryNum=#{diaryNum}
+	</update>
+	<update id="delete" parameterType="int">
+		update diary set del='y' where diaryNum=#{diaryNum}
+	</update>
 </mapper>

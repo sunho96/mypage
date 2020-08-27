@@ -30,4 +30,16 @@ public class DiaryDaoImpl implements DiaryDao{
 	
 		return sst.selectOne("diaryns.select",diaryNum);
 	}
+
+	@Override
+	public int update(Diary diary) {
+		
+		return sst.update("diaryns.update",diary);
+	}
+
+	@Override
+	public int delete(int diaryNum) {
+		
+		return sst.update("diaryns.delete",diaryNum);
+	}
 }

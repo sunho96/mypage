@@ -12,4 +12,8 @@ public interface DiaryDao {
 
 	Diary select(int diaryNum);
 
+	int update(Diary diary);
+
+	int delete(int diaryNum);
+
 }

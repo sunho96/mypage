@@ -42,12 +42,28 @@ public class DiaryController {
 	@RequestMapping("diary/view")
 	public String view(int diaryNum, Model model) {
 		Diary diary = ds.select(diaryNum);
-		System.out.println("diary memberNum"+diary.getMemberNum());
 		model.addAttribute("diary",diary);
 		return "diary/view";
 		
 	}
-//	
-//	@RequestMapping("diary/updateForm")
-//	public String updateForm(int )
+	
+	@RequestMapping("diary/updateForm")
+	public String updateForm(int diaryNum,Model model) {
+		Diary diary = ds.select(diaryNum);
+		model.addAttribute("diary",diary);
+		return "diary/updateForm";
+	}
+	@RequestMapping("diary/update")
+	public String update(Diary diary,Model model) {
+		int result = ds.update(diary);
+		model.addAttribute("result",result);
+		return "diary/update";
+	}
+	@RequestMapping("diary/delete")
+	public String delete(int diaryNum,Model model){
+		int result = ds.delete(diaryNum);
+		model.addAttribute("result",result);
+		return "diary/delete";
+	}
+	
 }
