@@ -15,7 +15,8 @@
 </script>
 </head>
 <body class="is-preload">
-	<div id="logo">
+	
+	<div id="logo" align="center" style="margin-top: 50px;">
 		<img alt="" src="images/logo_white1.png">
 	</div>
 	<a href="logout">로그아웃</a>
@@ -114,8 +115,7 @@
 
 			<!-- Notice -->
 			<article id="notice" class="panel">		
-				<div id="notice"></div>
-			<!-- 	<div id="notice"></div> -->
+				<div id="notice" align="center"></div>
 			</article>
 
 		</div>
