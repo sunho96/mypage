@@ -54,7 +54,7 @@
 							<tbody>
 
 								<c:forEach var="d" items="${list }">
-									<c:if test="${d.del=='n' }">
+									<c:if test="${d.del=='y' }">
 										<tr class="row100 body">
 											<td class="cell100 column1">${d.diaryNum }</td>
 											<td class="cell100 column1"><a

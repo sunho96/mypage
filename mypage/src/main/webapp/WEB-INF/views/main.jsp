@@ -15,7 +15,8 @@
 			$("#noticeList").load("notice/insertForm");
 		});
 		$("#diaryInsertForm").load("diary/insertForm");
-		$("#diaryList").load("diary/list");
+		$("#diaryList2").load("diary/list");
+		$("#diaryTrash2").load("diary/trash");
 		$("#diaryView").load("diary/view");
 	})
 </script>
@@ -38,7 +39,7 @@
 				href="#contact" class="icon solid fa-piggy-bank"><span>AccountBook</span></a>
 			<a href="#diaryWrite" class="icon solid fa-pen"><span>write
 					Diary</span></a> <a href="#diaryList" class="icon solid fa-book"><span>read
-					Diary</span></a> <a href="#notice" class="icon solid fa-book"><span>notice</span></a>
+					Diary</span></a> <a href="#notice" class="icon solid fa-bullhorn"><span>notice</span></a>
 			<a href="https://twitter.com/ajlkn" class="icon brands fa-instagram"><span>Community</span></a>
 		</nav>
 
@@ -65,16 +66,29 @@
 				</header>
 				<div id="diaryInsertForm"></div>
 			</article>
-			
+
 			<!-- DiaryList -->
 			<article id="diaryList" class="panel">
 				<header>
 					<h2>Diary</h2>
 					<h5>read your story</h5>
 				</header>
-				<div id="diaryList"></div>
+				<div id="diaryList2"></div>
+				<div align="right" style="margin-right: 30px;" >
+					<a href="#diaryTrash" class="icon solid fa-trash"
+						style="color: black; widows: 100%;"></a>
+				</div>
 			</article>
-		
+
+			<!-- DiaryTrash -->
+			<article id="diaryTrash" class="panel">
+				<header>
+					<h2>Diary</h2>
+				</header>
+				<div id="diaryTrash2"></div>
+			</article>
+
+
 			<!-- DiaryView -->
 			<article id="diaryView" class="panel">
 				<header>

@@ -65,5 +65,12 @@ public class DiaryController {
 		model.addAttribute("result",result);
 		return "diary/delete";
 	}
+	@RequestMapping("diary/trash")
+	public String trash(HttpSession session,Model model) {
+		int memberNum= (Integer) session.getAttribute("memberNum");
+		List<Diary> list = ds.list(memberNum);
+		model.addAttribute("list",list);
+		return "diary/trash";
+	}
 	
 }
