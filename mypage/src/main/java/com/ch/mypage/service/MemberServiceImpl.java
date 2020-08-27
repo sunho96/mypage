@@ -11,6 +11,19 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private MemberDao md;
 
+	
+	@Override
+	public Member select(String email) {
+		
+		return md.select(email);
+	}
+
+	@Override
+	public Member selectMember(int memberNum) {
+		
+		return md.selectMember(memberNum);
+	}
+	
 	@Override
 	public int insert(Member member) {
 		// TODO Auto-generated method stub
@@ -18,9 +31,9 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public Member select(String email) {
+	public int update(Member member) {
 		// TODO Auto-generated method stub
-		return md.select(email);
+		return md.update(member);
 	}
 	
 	

@@ -26,6 +26,31 @@
 	width: 30%;
 	border: none;
 }
+.hidden {
+	display: none;
+}
+
+.emailChkDisp {
+	margin-left: 8.33333%;
+	width: 100%;
+	padding: 0px;
+	color: white;
+	font-size: small;
+	font-weight: bold;
+	text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px
+		#000000;
+}
+
+.passwordChkDisp {
+	margin-left: 8.33333%;
+	width: 100%;
+	padding: 0px;
+	color: white;
+	font-size: small;
+	font-weight: bold;
+	text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px
+		#000000;
+}
 </style>
 <script src="assets/js/jquery.min.js"></script>
 <script type="text/javascript">
@@ -37,29 +62,6 @@
 				function() {
 					$.post("emailChk.do", "email=" + $("#join_email").val(),
 							function(data) {
-<<<<<<< HEAD
-								if (data=="사용가능") {
-									emailChk = true;
-									$("#emailChkDisp").html("사용가능한 이메일입니다");
-
-								} else {
-									emailChk = false;
-									$("#emailChkDisp").html(
-											"이미 사용중인 이메일 입니다. 다른 이메일을 사용하세요");
-								}
-								$('.emailChkDisp').fadeIn('slow');
-							});
-				});
-
-		//회원가입시 패스워드 확인
-		$("#join_password2").focusout(function() {
-			if ($("#join_password2").val() != $("#join_password").val()) {
-				passChk = false;
-				$('.passwordChkDisp').fadeIn('slow');
-				$("#passwordChkDisp").text("패스워드를 다시 확인해주세요");
-			}else{
-				passChk=true;
-=======
 								if (data == "사용가능") {
 									emailChk = true;
 									$("#emailChkDisp").html("사용가능한 이메일입니다");
@@ -69,7 +71,7 @@
 									$("#emailChkDisp").html(
 											"이미 사용중인 이메일 입니다. 다른 이메일을 사용하세요");
 								}
-								$('.emailChkDisp').fadeIn('slow');
+								$('.emailChkDisp').slideDown('fast');
 							});
 				});
 
@@ -77,11 +79,11 @@
 		$("#join_password2").focusout(function() {
 			if ($("#join_password2").val() != $("#join_password").val()) {
 				passChk = false;
-				$('.passwordChkDisp').fadeIn('slow');
+				$('.passwordChkDisp').slideDown('fast');
 				$("#passwordChkDisp").text("패스워드를 다시 확인해주세요");
 			} else {
 				passChk = true;
->>>>>>> branch 'master' of https://github.com/sunho96/mypage.git
+				$('.passwordChkDisp').slideUp('fast');
 			}
 		});
 	});
@@ -97,6 +99,7 @@
 		}
 
 	}
+
 </script>
 </head>
 <body class="is-preload">
@@ -131,7 +134,7 @@
 				</form>
 			</article>
 
-			<!-- JoinForm -->
+		<!-- JoinForm -->
 			<article id="JoinForm" class="panel">
 				<form action="join.do" method="post" name="frmJ"
 					onsubmit="return join_submitChk()">
@@ -140,10 +143,10 @@
 							style="padding-bottom: 50px" class="logo">
 						<div class="row">
 							<div class="off-1">
-								<input type="text" class="login" name="email" id="join_email"
+								<input type="email" class="login" name="email" id="join_email"
 									placeholder="email" required="required" />
 							</div>
-							<div class="emailChkDisp hidden">
+							<div class="emailChkDisp hidden ">
 								<span id="emailChkDisp"></span>
 							</div>
 							<div class="off-1">
@@ -153,7 +156,10 @@
 							<div class="off-1">
 								<input type="password" class="login" name="password2"
 									id="join_password2" placeholder="Password Confirm"
-									required="required" /> <span id="passwordChkDisp"></span>
+									required="required" />
+							</div>
+							<div class="passwordChkDisp hidden ">
+								<span id="passwordChkDisp"></span>
 							</div>
 
 							<div class="off-1">
@@ -166,7 +172,7 @@
 							</div>
 							<div class="off-1">
 								<input type="text" class="login" name="tel" required="required"
-									placeholder="Tel 010-xxxx-xxxx" />
+									placeholder="Tel 010-xxxx-xxxx" pattern="/^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?[0-9]{3,4}-?[0-9]{4}$/" alt="010-xxxx-xxxx"/>
 							</div>
 							<div class="off-1">
 								<input type="submit" class="login" id="loginbutton" value="Join">

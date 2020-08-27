@@ -11,13 +11,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ch.mypage.model.Member;
 import com.ch.mypage.service.MemberService;
-import com.ch.mypage.service.MyPageService;
 
 @Controller
 public class MemberController {
 	@Autowired
-	private MyPageService ms;
-	@Autowired MemberService mbs;
+	private MemberService ms;
 	
 	@RequestMapping("loginForm")
 	public String loginForm() {
@@ -26,8 +24,6 @@ public class MemberController {
 
 	@RequestMapping("login")
 	public String login(Member member, Model model, HttpSession session) {
-//		System.out.println("member email="+member.getEmail());
-//		System.out.println("member password="+member.getPassword());
 		int result = 0;
 		Member mem = ms.select(member.getEmail());
 		if (mem == null) { // 이메일이 검색이 안된 경우
@@ -74,22 +70,35 @@ public class MemberController {
 	@RequestMapping(value="join.do" , method = RequestMethod.POST)
 	public String join(Member member, Model model ) {
 		int result =0;
-		Member mem = mbs.select(member.getEmail());
+		Member mem = ms.select(member.getEmail());
 		
 		if(mem== null) {
-			result= mbs.insert(member);
+			result= ms.insert(member);
 		}else result=-1;
-		
 		
 		model.addAttribute("result", result);
 		model.addAttribute("member", member);
 		
 		return "member/join";
 	}
-	@RequestMapping("memberUpdate_form")
-	public String memberUpdate_form() {
-	
+	@RequestMapping(value="memberUpdate_form", produces = "text/html;charset=utf-8")
+	public String memberUpdate_form(Model model, HttpSession session) {
+		int memberNum = (Integer)session.getAttribute("memberNum");
+		Member member = ms.selectMember(memberNum); // 읽고 
+		model.addAttribute("member", member); // 값을 폼에 대입
 		return "member/memberUpdate_form";
+
+	}
+	@RequestMapping(value="memberUpdate", produces = "text/html;charset=utf-8")
+	public String memberUpdate(Member member,Model model) {
+		int result = ms.update(member);
+		System.out.println("member:"+member.getEmail()); // 값 들어오는지 확인
+		System.out.println("member:"+member.getPassword());
+		System.out.println("member:"+member.getTel());
+		model.addAttribute("result", result);
+		model.addAttribute("member", member);
+		return "member/memberUpdate";
+		
 	}
 
 }

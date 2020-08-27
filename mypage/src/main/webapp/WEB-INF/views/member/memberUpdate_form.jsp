@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@include file="../header.jsp" %>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,35 +32,75 @@
 	border: none;
 }
 </style>
+<script src="assets/js/jquery.min.js"></script>
+<script type="text/javascript">
+var passChk = true;
+$("#password2").focusout(function() {
+	if($("#password2").val() != $("password").val()){
+		passChk = false;
+		$('.passwordChkDisp').fadeIn('slow');
+		$("#passwordChkDisp").text("암호가 다릅니다.");
+	} else {
+		passChk = true;
+	}
+});
+
+
+
+</script>
 </head>
 <body class="is-preload">
 	<!-- Wrapper-->
 	<div id="wrapper">
 		<!-- Main -->
+		
 		<div id="main">
 			<!--회원정보 수정 -->
 			<h2 align="center">회원정보수정</h2>
 			<article id="LoginForm" class="panel">
-				<form action="memberUpdate.html" method="post">
+				<form action="memberUpdate" method="post">
+				<input type="hidden" value="${member.memberNum}" name="memberNum">
 					<div align="center">
 						<div class="row">
-						
 							<div class="off-1">
-								<tr>
-									<td>${member.email}이메일 고정</td>
-								</tr>
+								 <input type="email" class="login" name="email"
+									placeholder="email" required="required"
+									value="${member.email }" readonly="readonly" />
+
 							</div>
-							
-							 <div class="off-1">
+
+							<div class="off-1">
 								<input type="password" class="login" name="password"
-									placeholder="Password Update" required="required" value="${member.password}"/>
+									placeholder="Password Update" required="required"
+									/>
 							</div>
-					<!-- 		<div class="off-1">
+
+							<div class="off-1">
+								<input type="password" class="login" name="password2"
+									placeholder="Pass Update confirm" required="required"
+									 /><span id="passwordChkDisp"></span>
+							</div>
+
+							<div class="off-1">
+								<input type="text" class="login" name="name" placeholder="name"
+									required="required" value="${member.name }" readonly="readonly" />
+							</div>
+							<div class="off-1">
+								<input type="text" class="login" name="nickName"
+									placeholder="Nickname" required="required"
+									/>
+							</div>
+							<div class="off-1">
+								<input type="text" class="login" name="tel" required="required"
+									placeholder="Tel 010-xxxx-xxxx" value="${member.tel }" />
+							</div>
+
+
+							<div class="off-1">
 								<input type="submit" class="login" id="loginbutton"
-									value="login">
-							</div>  -->
+									value="ok">
+							</div>  
 						</div>
-						<!-- 	이메일 고정 비번 비번 확인 이름 고정 별명 수정 전화번호 수정 -->
 					</div>
 				</form>
 			</article>
@@ -74,7 +116,7 @@
 		<ul class="copyright">
 		</ul>
 	</div>
-	</div>
+	
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>

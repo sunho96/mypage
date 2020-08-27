@@ -10,15 +10,28 @@ import com.ch.mypage.model.Member;
 public class MemberDaoImpl implements MemberDao {
 	@Autowired
 	private SqlSessionTemplate sst;
+	
 
+	@Override
+	public Member select(String email) {
+		
+		return sst.selectOne("memberns.select",email);
+	}
+
+	@Override
+	public Member selectMember(int memberNum) {
+	
+		return sst.selectOne("memberns.selectMember",memberNum);
+	}
+	
 	@Override
 	public int insert(Member member) {
 		return sst.insert("memberns.insert",member);
 	}
 
 	@Override
-	public Member select(String email) {
-		System.out.println(email);
-		return sst.selectOne("memberns.select",email);
+	public int update(Member member) {
+		// TODO Auto-generated method stub
+		return sst.update("memberns.update", member);
 	}
 }

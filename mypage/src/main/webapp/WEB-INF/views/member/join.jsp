@@ -12,7 +12,7 @@
 
 <c:if test="${result>0 }">
 	<script type="text/javascript">
-		location.href="loginForm.do";
+		location.href="loginForm";
 	</script>
 </c:if>
 <c:if test="${result==0 }">
