@@ -24,15 +24,11 @@
 		<c:if test="${not empty AccountList}">
 			<!-- list를 불러옴 -->
 			<c:forEach var="account" items="${AccountList}">
+				<!-- 계좌번호 -->
 				<tr>
-					<!-- 계좌번호 -->
-					<a href="">${account.accountNum }</a>
-				</tr>
-				<tr>
+					<td><a href="AccountDetailList?accountNum=${account.accountNum }">${account.accountNum }</a></td>
 					<!-- 은행 -->
 					<td>${account.bank }</td>
-				</tr>
-				<tr>
 					<!-- 잔액 -->
 					<td>${account.total }</td>
 				</tr>

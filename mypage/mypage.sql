@@ -2,6 +2,11 @@ select * from notice;
 select * from diary;
 delete from diary;
 insert into diary values(diary_seq.nextval,'test','test',sysdate,sysdate,'n',1,1);
+
+create sequence member_seq start with 1 increment by 1 nocycle nocache;
+create sequence notice_seq start with 1 increment by 1 nocycle nocache;
+create sequence diary_seq start with 1 increment by 1 nocycle nocache;
+create sequence diaryCata_seq start with 1 increment by 1 nocycle nocache;
 select* from member;
 -- 01. 회원 
 create table member(
@@ -45,7 +50,7 @@ create table diarycatagory(
 diaryCataNum number primary key,
 name VARCHAR2(50)
 );
-
+insert into DIARYCATAGORY values(diaryCata_seq.nextval,'음식');
 --  05. 다이어리
 
 create table diary(
