@@ -131,6 +131,7 @@
 							<div class="off-1">
 							<a href="#JoinForm" class="login"><span>회원가입</span></a>
 							</div>
+							.   
 						</div>
 					</div>
 				</form>
