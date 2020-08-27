@@ -50,7 +50,7 @@
 			<article id="home" class="panel intro">
 				<header>
 					<h1>${member.nickName }</h1>
-					<p>환영합니다. 당신의 웹다이어리 mypage</p>
+					<p>환영합니다. 당신의 웹다이어리 My Page</p>
 				</header>
 				<a href="#work" class="jumplink pic"> <span
 					class="arrow icon solid fa-chevron-right"><span>See

@@ -178,7 +178,7 @@
 							</div>
 							<div class="off-1">
 								<input type="text" class="login" name="tel" required="required"
-									placeholder="Tel 010-xxxx-xxxx" pattern="/^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?[0-9]{3,4}-?[0-9]{4}$/" alt="010-xxxx-xxxx"/>
+									placeholder="Tel 010-xxxx-xxxx" pattern="\d{3}-\d{3,4}-\d{4}" alt="010-xxxx-xxxx"/>
 							</div>
 							<div class="off-1">
 								<input type="submit" class="login" id="loginbutton" value="Join">
