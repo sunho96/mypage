@@ -4,13 +4,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
 	function accchk() {
-		alert(frm.accountNum.value);
-		
-		$("#accountNumChk").html(frm.accountNum.value);
-		$.post('accountNumChk', 'accountNum='+frm.accountNum.value, function(data) {
+		$.post('accountNumChk', 'accountNum=' + frm.accountNum.value, function(
+				data) {
 			$('#accountNumChk').html(data);
 		});
 	}
@@ -18,7 +16,7 @@
 </head>
 <body>
 	세션 아이디 : ${sessionScope.memberNum }
-	<form action="AccountInsert" method="post" name="frm">
+	<form action="AccountInsert" method="post" name="frm" onsubmit="return accchk()">
 		<input type="hidden" name="memberNum" value="${sessionScope.memberNum }"> <input type="hidden" name=total value="0">
 		<table>
 			<tr>

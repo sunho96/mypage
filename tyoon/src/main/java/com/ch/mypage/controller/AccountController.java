@@ -35,11 +35,10 @@ public class AccountController {
 	@RequestMapping(value = "/accountNumChk", produces = "text/html;charset=utf-8")
 	@ResponseBody
 	public String accountNumChk(int accountNum) {
-		System.out.println(accountNum);
 		String msg = "";
 		Account acc = as.accountNumChk(accountNum);
 		if (acc == null)
-			msg = "true";
+			msg = "사용 가능한 계좌번호입니다";
 		else
 			msg = "이미 사용중인 계좌번호입니다";
 		return msg;
