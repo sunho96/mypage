@@ -14,6 +14,8 @@ create table member(
   del VARCHAR2(2)
  );
  
+ select * from member;
+ 
  --02.계좌
  
  create table account(
@@ -159,6 +161,7 @@ create table picture(
 
 
 create sequence member_seq start with 1 increment by 1 nocycle nocache;
+create sequence notice_seq start with 1 increment by 1 nocycle nocache;
 insert into member values(member_seq.nextval, 'senho500@naver.com', '11', '이선호', '태양',010-8385-0498, sysdate,'n');
 
 
