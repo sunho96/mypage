@@ -13,6 +13,8 @@ create table member(
   del VARCHAR2(2)
  );
  
+ select * from member;
+ 
  --02.계좌
  
  create table account(
