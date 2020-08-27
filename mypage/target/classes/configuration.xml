@@ -6,9 +6,11 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAliases>
 		<typeAlias alias="member" type="com.ch.mypage.model.Member"/>
 		<typeAlias alias="notice" type="com.ch.mypage.model.Notice"/>
+		<typeAlias alias="diary" type="com.ch.mypage.model.Diary"/>
 	</typeAliases>
 	<mappers>
 		<mapper	resource="member.xml" />
 		<mapper	resource="notice.xml" />
+		<mapper	resource="diary.xml" />
 	</mappers>
 </configuration>

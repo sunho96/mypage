@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:set var="email" value="${sessionScope.email }"/>
-<c:if test="${empty email }">
+<c:set var="memberNum" value="${sessionScope.email }"/>
+<c:if test="${empty memberNum }">
 	<script type="text/javascript">
 	alert("로그인이 필요한 서비스입니다.");
 	location.href="loginForm";
