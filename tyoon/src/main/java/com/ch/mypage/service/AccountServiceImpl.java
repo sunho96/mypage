@@ -13,16 +13,21 @@ public class AccountServiceImpl implements AccountService{
 	@Autowired
 	private AccountDao ad;
 
-	public Collection<Account> AccountList(int memberNum) {
-		return ad.AccountList(memberNum);
-	}
-
-	public int AccountInsert(Account account) {
-		return ad.AccountInsert(account);
-	}
-
 	public Account accountNumChk(int accountNum) {
 		return ad.accountNumChk(accountNum);
 	}
+
+	public int Insert(Account account) {
+		return ad.Insert(account);
+	}
+
+	public Collection<Account> List(int memberNum) {
+		return ad.List(memberNum);
+	}
+
+	public int updatetotal(int accountNum, int total) {
+		return ad.updatetotal(accountNum, total);
+	}
+
 
 }

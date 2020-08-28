@@ -6,8 +6,17 @@ import com.ch.mypage.model.AccountBook;
 
 public interface AccountBookDao {
 
-	Collection<AccountBook> AccountBookList(int accountNum);
+	Collection<AccountBook> List(int accountNum);
 
-	int AccountInsert(AccountBook accountBook);
+	int Insert(AccountBook accountBook);
+
+	AccountBook select(int abookNum);
+
+	int Update(AccountBook accountBook);
+
+	int delete(int abookNum);
+
+	int total(int accountNum);
+
 
 }

@@ -5,14 +5,27 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+function Delete(abookNum) {
+	var con;
+	con = confirm("삭제 하시겠습니까?");
+	if(con){
+		event.preventDefault();
+		$.post('AccountDetailDeleteForm',"abookNum=" + abookNum, function(data) {
+			alert(data);
+			location.reload();
+		});
+	}
+		else alert("삭제 취소");
+}
+</script>
 </head>
 <body>
 	세션 아이디 : ${sessionScope.memberNum }
 
 	<h2>계좌번호 : ${accountNum }</h2>
-	<hr>
 	<a href="AccountDetailInsertForm?accountNum=${accountNum }">계좌 상세내역 추가하기</a>
-	<hr>
 	<table>
 		<tr>
 			<th>거래종류</th>
@@ -33,11 +46,16 @@
 				<td>${detail.category }</td>
 				<td>${detail.regDate }</td>
 				<td>${detail.memo }</td>
-				<td><a href="AccountDetailUpdateForm?abookNum=${detail.abookNum }">수정</a></td>
-				<td><a href="AccountDetailDeleteForm?abookNum=${detail.abookNum }">삭제</a></td>
+				<td>
+					<a href="AccountDetailUpdateForm?abookNum=${detail.abookNum }">수정</a>
+				</td>
+				<td>
+					<a href="" onclick="Delete(${detail.abookNum})">삭제</a>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>
+	잔액 : ${total }
 
 	<%@ include file="AccountMain.jsp"%>
 
