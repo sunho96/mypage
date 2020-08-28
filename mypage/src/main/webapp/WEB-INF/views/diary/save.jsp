@@ -10,12 +10,13 @@
 <body>
 <c:if test="${result>0 }">
 	<script type="text/javascript">
-		history.go(0);
+		alert("복구되었습니다.")
+		location.href="${path}/main#diaryTrash";
 	</script>
 </c:if>
 <c:if test="${result==0 }">
 	<script type="text/javascript">
-		alert("다이어리 입력 실패");
+		alert("복구 실패");
 		history.go(-1);
 	</script>
 </c:if>

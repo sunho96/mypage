@@ -50,8 +50,8 @@ public class DiaryServiceImpl implements DiaryService {
 	}
 
 	@Override
-	public void del(int diaryNum) {
+	public int del(int diaryNum) {
 		
-		
+		return dd.del(diaryNum);
 	}
 }

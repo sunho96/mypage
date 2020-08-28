@@ -27,20 +27,10 @@
 <script src="assets/js/jquery.min.js"></script>
 <script type="text/javascript">
 	function save(num) {
-		$.post("diary/save", "diayNum="+num,function(data){
-			if(data="복구 성공") alert("복구 성공");
-			else alert("복구 실패");
-		})
-		/* location.href="diary/save?diaryNum="+num; */
+		location.href="diary/save?diaryNum="+num;
 	}
-	function del(num){
-		var del = confirm("삭제하겠습니까?\n삭제하면 복구할 수 없습니다.");
-		if(del){
-			location.href="diary/del?diaryNum="+num;
-		}
-		else{
-			history.go(0);
-		}
+	function del(num) {
+		location.href="diary/del?diaryNum="+num;
 	}
 </script>
 </head>
@@ -70,13 +60,17 @@
 
 								<c:forEach var="d" items="${list }" varStatus="a">
 									<c:if test="${d.del=='y' }">
-										<input type="hidden" id="num_${a.index }" value="${d.diaryNum }">
+										<input type="hidden" id="d_${a.index }" value="${d.diaryNum }">
+
 										<tr class="row100 body">
 											<td class="cell100 column1"><a
 												href="diary/view?diaryNum=${d.diaryNum}">${d.subject }</a></td>
 											<td class="cell100 column2">${d.regDate }</td>
-											<td class="cell100 column3"><button onclick="save(${d.diaryNum})">복구</button></td>
-											<td class="cell100 column4"><button onclick="del(${d.diaryNum})">삭제</button></td>
+											<td class="cell100 column3"><button
+													onclick="save(${d.diaryNum})">복구</button></td>
+
+											<td class="cell100 column4"><button
+													onclick="del(${d.diaryNum})">삭제</button></td>
 										</tr>
 									</c:if>
 								</c:forEach>
@@ -86,7 +80,7 @@
 					</div>
 
 				</div>
-				<%-- <a href="${path }/notice/insertForm">입력</a> --%>
+
 			</div>
 		</div>
 	</div>

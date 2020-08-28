@@ -69,7 +69,6 @@
 					</div>
 
 				</div>
-				<%-- <a href="${path }/notice/insertForm">입력</a> --%>
 			</div>
 		</div>
 	</div>

@@ -18,6 +18,6 @@ public interface DiaryService {
 
 	int save(int diaryNum);
 
-	void del(int diaryNum);
+	int del(int diaryNum);
 
 }

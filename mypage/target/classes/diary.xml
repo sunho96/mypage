@@ -30,4 +30,7 @@
 	<update id="save" parameterType="int">
 		update diary set del='n' where diaryNum=#{diaryNum}
 	</update>
+	<delete id="del" parameterType="int">
+		delete from diary where diaryNum=#{diaryNum}
+	</delete>
 </mapper>

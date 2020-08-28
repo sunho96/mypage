@@ -18,4 +18,6 @@ public interface DiaryDao {
 
 	int save(int diaryNum);
 
+	int del(int diaryNum);
+
 }
