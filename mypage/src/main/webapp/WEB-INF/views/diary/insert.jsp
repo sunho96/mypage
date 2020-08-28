@@ -10,7 +10,7 @@
 <body>
 <c:if test="${result>0 }">
 	<script type="text/javascript">
-		history.go(0);
+		location.href="${path}/main#diaryList";
 	</script>
 </c:if>
 <c:if test="${result==0 }">

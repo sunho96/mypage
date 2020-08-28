@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ch.mypage.model.Diary;
 import com.ch.mypage.service.DiaryService;
@@ -25,7 +24,6 @@ public class DiaryController {
 	@RequestMapping("diary/insert")
 	public String insert(Diary diary, Model model) {
 		int result = ds.insert(diary);
-		System.out.println("result="+result);
 		model.addAttribute("result", result);
 		return "diary/insert";
 	}
@@ -82,20 +80,9 @@ public class DiaryController {
 		model.addAttribute("result", result);
 		return "diary/del";
 	}
-	@RequestMapping("diary/insertDiary")
-	public String insertDiary() {
-		Diary d= new Diary();
-		for (int i = 30; i < 55; i++) {
-//			d.setDiaryNum(i);
-//			d.setSubject("hi!"+i);
-//			d.setContent("content"+i);
-//			d.setMemberNum(1);
-//			d.setDiaryCataNum(1);
-			d.setDiaryNum(i);
-			ds.delete(d.getDiaryNum());
-		}
-		return "diary/insertDiary";
+	
+
 		
-	}
+	
 	
 }

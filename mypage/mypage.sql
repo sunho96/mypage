@@ -4,6 +4,7 @@ delete from diary;
 insert into diary values(diary_seq.nextval,'test','test',sysdate,sysdate,'n',1,1);
 drop sequence diary_seq;
 delete from diary;
+insert into diary values()
 create sequence member_seq start with 1 increment by 1 nocycle nocache;
 create sequence notice_seq start with 1 increment by 1 nocycle nocache;
 create sequence diary_seq start with 1 increment by 1 nocycle nocache;

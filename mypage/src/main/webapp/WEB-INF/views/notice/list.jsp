@@ -6,24 +6,12 @@
 <head>
 <title>table_form</title>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css"
-	href="table/vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="table/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="table/vendor/animate/animate.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="table/vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="table/vendor/perfect-scrollbar/perfect-scrollbar.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="table/css/table_util.css">
-<link rel="stylesheet" type="text/css" href="table/css/table_main.css">
-<!--===============================================================================================-->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	function insertForm() {
 		location.href = "notice/insertForm";
@@ -31,45 +19,27 @@
 </script>
 </head>
 <body>
-
-	<div class="limiter">
-
-		<div class="container-table10">
-
-			<div class="wrap-table100">
-				<div class="table100 ver1 m-b-110" align="center">
-					<div class="table100-head">
-						<table>
-							<thead>
-								<tr class="row100 head">
-									<th class="cell100 column1">번호</th>
-									<th class="cell100 column1">제목</th>
-									<th class="cell100 column1">날짜</th>
-								</tr>
-							</thead>
-						</table>
-					</div>
-					<div class="table100-body js-pscroll">
-						<table>
-							<tbody>
-								<c:forEach var="n" items="${list }">
-									<tr class="row100 body">
-										<td class="cell100 column1">${n.noticeNum }</td>
-										<td class="cell100 column1"><a
-											href="notice/view?noticeNum=${n.noticeNum }">${n.subject }</a></td>
-										<td class="cell100 column1">${n.regDate }</td>
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
-					
-					</div>
-
-				</div>
-			</div>
-				<button onclick="location.href='${path}/main#notice'">입력</button>
+	<div class="container">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>제목</th>
+					<th>날짜</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="n" items="${list }">
+					<tr>
+						<td>${n.noticeNum }</td>
+						<td><a href="notice/view?noticeNum=${n.noticeNum }">${n.subject }</a></td>
+						<td>${n.regDate }</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
 		</div>
-	</div>
+
 
 
 	<!--===============================================================================================-->
