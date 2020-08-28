@@ -14,10 +14,10 @@ import com.ch.mypage.service.DiaryService;
 public class DiaryCataController {
 	@Autowired
 	private DiaryService ds;
-	@RequestMapping("diary/diaryCatagory")
+	@RequestMapping("diary/catagory")
 	public String diaryCatagory(Model model) {
 		List<DiaryCatagory> cataList= ds.cataList(); 
 		model.addAttribute("cataList",cataList);
-		return "diary/diaryCatagory";
+		return "diary/catagory";
 	}
 }

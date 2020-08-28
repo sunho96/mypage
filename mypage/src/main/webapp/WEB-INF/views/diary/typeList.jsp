@@ -14,7 +14,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-	$(function() {
+	 $(function() {
 		$("#diaryCataDisp").load("diary/diaryCatagory");
 	});
 </script>
@@ -22,7 +22,6 @@
 <body>
 	<div id="diaryCataDisp"></div>
 	<div class="container">
-
 		<table class="table">
 			<thead>
 				<tr>
@@ -32,7 +31,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:if test="${not empty list }">
+				
 					<c:forEach var="d" items="${list }">
 						<c:if test="${d.del=='n' }">
 							<tr>
@@ -42,8 +41,8 @@
 							</tr>
 						</c:if>
 					</c:forEach>
-				</c:if>
-				<c:if test="${not empty typeList }">
+			
+				<c:if test="${empty list }">
 					<c:forEach var="d" items="${typeList }">
 						<c:if test="${d.del=='n' }">
 							<tr>

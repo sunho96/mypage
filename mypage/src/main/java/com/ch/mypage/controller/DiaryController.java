@@ -21,69 +21,78 @@ public class DiaryController {
 	public String insertForm() {
 		return "diary/insertForm";
 	}
+
 	@RequestMapping("diary/insert")
 	public String insert(Diary diary, Model model) {
 		int result = ds.insert(diary);
 		model.addAttribute("result", result);
 		return "diary/insert";
 	}
+
 	@RequestMapping("diary/list")
-	public String list(int diaryCataNum,HttpSession session,Model model) {
-		int memberNum= (Integer) session.getAttribute("memberNum");
-		System.out.println("diaryCataNum="+diaryCataNum);
+	public String list(HttpSession session, Model model) {
+		int memberNum = (Integer) session.getAttribute("memberNum");
 		List<Diary> list = ds.list(memberNum);
-		model.addAttribute("list",list);
-		/*
-		 * if(diaryCataNum ==0) { List<Diary> list = ds.list(memberNum);
-		 * model.addAttribute("list",list); }else { List<Diary> typeList =
-		 * ds.typeList(memberNum,diaryCataNum); model.addAttribute("typeList",typeList);
-		 * }
-		 */
+		model.addAttribute("list", list);
 		return "diary/list";
 	}
+
 	@RequestMapping("diary/view")
 	public String view(int diaryNum, Model model) {
 		Diary diary = ds.select(diaryNum);
-		model.addAttribute("diary",diary);
-		return "diary/view";	
-	}	
+		model.addAttribute("diary", diary);
+		return "diary/view";
+	}
+
 	@RequestMapping("diary/updateForm")
-	public String updateForm(int diaryNum,Model model) {
+	public String updateForm(int diaryNum, Model model) {
 		Diary diary = ds.select(diaryNum);
-		model.addAttribute("diary",diary);
+		model.addAttribute("diary", diary);
 		return "diary/updateForm";
 	}
+
 	@RequestMapping("diary/update")
-	public String update(Diary diary,Model model) {
+	public String update(Diary diary, Model model) {
 		int result = ds.update(diary);
-		model.addAttribute("result",result);
+		model.addAttribute("result", result);
 		return "diary/update";
 	}
+
 	@RequestMapping("diary/delete")
-	public String delete(int diaryNum,Model model){
+	public String delete(int diaryNum, Model model) {
 		int result = ds.delete(diaryNum);
-		model.addAttribute("result",result);
+		model.addAttribute("result", result);
 		return "diary/delete";
 	}
+
 	@RequestMapping("diary/trash")
-	public String trash(HttpSession session,Model model) {
-		int memberNum= (Integer) session.getAttribute("memberNum");
+	public String trash(HttpSession session, Model model) {
+		int memberNum = (Integer) session.getAttribute("memberNum");
 		List<Diary> list = ds.list(memberNum);
-		model.addAttribute("list",list);
+		model.addAttribute("list", list);
 		return "diary/trash";
 	}
+
 	@RequestMapping("diary/save")
 	public String save(int diaryNum, Model model) {
 		int result = ds.save(diaryNum);
 		model.addAttribute("result", result);
 		return "diary/save";
-		
+
 	}
+
 	@RequestMapping("diary/del")
 	public String del(int diaryNum, Model model) {
-		int result=ds.del(diaryNum);
+		int result = ds.del(diaryNum);
 		model.addAttribute("result", result);
 		return "diary/del";
 	}
-	
+	@RequestMapping("diary/typeList")
+	public String typeList(int diaryCataNum, HttpSession session,Model model) {
+		int memberNum = (Integer) session.getAttribute("memberNum");
+		List<Diary> typeList = ds.typeList(memberNum, diaryCataNum);
+		model.addAttribute("typeList",typeList);
+		return "diary/list";	
+	}
+
 }
