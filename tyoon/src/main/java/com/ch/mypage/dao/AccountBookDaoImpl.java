@@ -37,5 +37,9 @@ public class AccountBookDaoImpl implements AccountBookDao {
 		return sst.selectOne("accountbookns.total", accountNum);
 	}
 
+	public AccountBook detailTotal(int accountNum) {
+		return sst.selectOne("accountbookns.detailTotal", accountNum);
+	}
+
 
 }

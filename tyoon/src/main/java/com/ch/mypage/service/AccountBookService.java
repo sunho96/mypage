@@ -18,5 +18,7 @@ public interface AccountBookService {
 
 	int total(int accountNum);
 
+	AccountBook detailTotal(int accountNum);
+
 
 }

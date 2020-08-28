@@ -37,5 +37,9 @@ public class AccountBookServiceImpl implements AccountBookService{
 		return abd.total(accountNum);
 	}
 
+	public AccountBook detailTotal(int accountNum) {
+		return abd.detailTotal(accountNum);
+	}
+
 
 }

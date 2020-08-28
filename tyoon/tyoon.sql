@@ -1,30 +1,9 @@
-select nvl(max(abookNum),0)+1 from accountbook;
-select sum(amount) from accountbook where accountnum=11 and dealtype='수입';
-select sum(amount) from accountbook where accountnum=11 and dealtype='지출';
-
-select a.accountnum t, select nvl(sum(ab.amount),0) from account a,accountbook ab where a.accountnum=ab.accountnum and dealtype='지출'; total, a.bank, a.membernum from account a, accountbook ab;
-select * from accountbook;
-select * from account;
-
-
-select 
-
-select nvl(sum(ab.amount),0) from account a,accountbook ab where a.accountnum=ab.accountnum and dealtype='지출';
-
-select
-		(select nvl(sum(ab.amount),0) from account a, accountbook ab where a.accountnum=ab.accountnum and dealtype='수입')
-		-
-		(select nvl(sum(amount),0) from accountbook where a.accountnum=ab.accountnum and dealtype='지출')
-from dual;
-
-select a.accountnum, ab.accountnum from account a, accountbook ab where memberNum=101 and a.accountnum=ab.accountnum;
 
 --테스트값 입력
 
 select * from member;
 select * from account;
 select * from accountBook;
-
 insert into member values (101,'email','pass','name','nickName','tel',sysdate,'n');
 insert into member values (102,'email2','pass','name2','nickName2','tel2',sysdate,'n');
 insert into member values (103,'email3','pass','name3','nickName3','tel3',sysdate,'n');
@@ -40,13 +19,16 @@ insert into account values (22,'0','하나','102');
 
 insert into accountBook values (1,'지출',6000,'김밥천국','식사',sysdate,'제육',11);
 insert into accountBook values (2,'지출',9000,'신촌칼국수','식사',sysdate,'칼국수',11);
-insert into accountBook values (3,'수입',9000,'1조','식사',sysdate,'칼국수',11);
-insert into accountBook values (5,'수입',9000,'1조','식사',sysdate,'칼국수',11);
-insert into accountBook values (6,'수입',9000,'1조','식사',sysdate,'칼국수',12);
-insert into accountBook values (7,'수입',9000,'1조','식사',sysdate,'칼국수',12);
-insert into accountBook values (8,'수입',9000,'1조','식사',sysdate,'칼국수',12);
-insert into accountBook values (9,'수입',9000,'1조','식사',sysdate,'칼국수',12);
-insert into accountBook values (10,'수입',9000,'1조','식사',sysdate,'칼국수',11);
+insert into accountBook values (3,'지출',8500,'라멘','식사',sysdate,'돈코츠',11);
+insert into accountBook values (4,'지출',7000,'마라탕','식사',sysdate,'훠궈',11);
+insert into accountBook values (5,'지출',9000,'버거킹','식사',sysdate,'와퍼세트',11);
+insert into accountBook values (6,'지출',50000,'SKT','통신요금',sysdate,'LTE',11);
+insert into accountBook values (13,'지출',55000,'지하철','교통비',sysdate,'하철이',11);
+insert into accountBook values (14,'지출',50000,'현질','기타',sysdate,'바람의나라',11);
+insert into accountBook values (7,'수입',150000,'취성패','급여',sysdate,'매달나옴',11);
+insert into accountBook values (8,'수입',10000,'꼴박','주식',sysdate,'ㅉㅉ',11);
+insert into accountBook values (9,'수입',5000,'운몰빵','복권',sysdate,'ㅅㅌㅊ',11);
+insert into accountBook values (10,'수입',10000,'땅파서나옴','기타',sysdate,'??',11);
 
 
 

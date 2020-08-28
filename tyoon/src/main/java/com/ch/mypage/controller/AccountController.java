@@ -63,10 +63,12 @@ public class AccountController {
 	@RequestMapping("/AccountDetailList")
 	public String AccountDetailList(int accountNum, Model model) {
 		Collection<AccountBook> AccountBookList = abs.List(accountNum);
+		AccountBook detailTotal = abs.detailTotal(accountNum);
 		int total = abs.total(accountNum);
-		int result = 0;
-		result = as.updatetotal(accountNum,total);
+		int result = as.updatetotal(accountNum,total);
 		model.addAttribute("total", total);
+		model.addAttribute("detailTotal", detailTotal);
+		model.addAttribute("result", result);
 		model.addAttribute("accountNum", accountNum);
 		model.addAttribute("AccountBookList", AccountBookList);
 		return "Account/AccountDetailList";
