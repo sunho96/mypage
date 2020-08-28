@@ -4,12 +4,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/AccountStyle.css">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
 	function accchk() {
+		event.preventDefault();
 		$.post('accountNumChk', 'accountNum=' + frm.accountNum.value, function(
 				data) {
-			alert(data);
 			$('#accountNumChk').html(data);
 		});
 	}

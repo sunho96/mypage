@@ -10,7 +10,7 @@
 		session.setAttribute("memberNum", 101);
 	%>
 	<script type="text/javascript">
-		location.href = "AccountMain";
+		location.href = "AccountList";
 	</script>
 </body>
 </html>

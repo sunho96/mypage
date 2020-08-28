@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/AccountStyle.css">
 </head>
 <body>
 	세션 아이디 : ${sessionScope.memberNum }
