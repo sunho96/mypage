@@ -42,4 +42,16 @@ public class DiaryServiceImpl implements DiaryService {
 		
 		return dd.delete(diaryNum);
 	}
+
+	@Override
+	public int save(int diaryNum) {
+		
+		return dd.save(diaryNum);
+	}
+
+	@Override
+	public int del(int diaryNum) {
+		
+		return dd.del(diaryNum);
+	}
 }

@@ -23,12 +23,7 @@ public class DiaryController {
 	}
 	@RequestMapping("diary/insert")
 	public String insert(Diary diary, Model model) {
-		System.out.println("diary들어오나..");
-		System.out.println("diary subject="+diary.getSubject());
-		System.out.println("diary content="+diary.getContent());
-		System.out.println("diary memberNum="+diary.getMemberNum());
 		int result = ds.insert(diary);
-		System.out.println("result="+result);
 		model.addAttribute("result", result);
 		return "diary/insert";
 	}
@@ -72,5 +67,22 @@ public class DiaryController {
 		model.addAttribute("list",list);
 		return "diary/trash";
 	}
+	@RequestMapping("diary/save")
+	public String save(int diaryNum, Model model) {
+		int result = ds.save(diaryNum);
+		model.addAttribute("result", result);
+		return "diary/save";
+		
+	}
+	@RequestMapping("diary/del")
+	public String del(int diaryNum, Model model) {
+		int result=ds.del(diaryNum);
+		model.addAttribute("result", result);
+		return "diary/del";
+	}
+	
+
+		
+	
 	
 }

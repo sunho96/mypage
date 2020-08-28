@@ -16,7 +16,7 @@
 		insert into diary values(diary_seq.nextval,#{subject},#{content},sysdate,sysdate,'n',1,#{memberNum})
 	</insert>
 	<select id="list" parameterType="int" resultMap="diaryResult">
-		select * from diary where memberNum = #{memberNum} order by regDate desc
+		select * from diary where memberNum = #{memberNum} order by diaryNum desc
 	</select>
 	<select id="select" parameterType="int" resultType="diary">
 		select * from diary where diaryNum=#{diaryNum}
@@ -27,4 +27,10 @@
 	<update id="delete" parameterType="int">
 		update diary set del='y' where diaryNum=#{diaryNum}
 	</update>
+	<update id="save" parameterType="int">
+		update diary set del='n' where diaryNum=#{diaryNum}
+	</update>
+	<delete id="del" parameterType="int">
+		delete from diary where diaryNum=#{diaryNum}
+	</delete>
 </mapper>
