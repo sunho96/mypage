@@ -18,5 +18,7 @@ public interface AccountBookDao {
 
 	int total(int accountNum);
 
+	AccountBook detailTotal(int accountNum);
+
 
 }

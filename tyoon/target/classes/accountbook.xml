@@ -12,16 +12,38 @@
 		<result property="memo" column="memo" />
 		<result property="accountNum" column="accountNum" />
 	</resultMap>
+	<!-- 계좌번호를 통해 계좌 상세 조회 -->
 	<select id="List" parameterType="int" resultMap="accountbookResult">
 		select * from accountbook where accountNum = #{accountNum} order by regdate desc
 	</select>
+	
+	<!-- 계좌 상세 내역중 지출/수입의 카테고리별 합 -->
+	<select id="detailTotal" parameterType="int" resultType="accountbook">
+		select
+		(select nvl(sum(amount),0) from accountbook where accountnum=#{accountnum} and dealtype='수입' and category='급여') insal,
+		(select nvl(sum(amount),0) from accountbook where accountnum=#{accountnum} and dealtype='수입' and category='주식') insto,
+		(select nvl(sum(amount),0) from accountbook where accountnum=#{accountnum} and dealtype='수입' and category='복권') inlot,
+		(select nvl(sum(amount),0) from accountbook where accountnum=#{accountnum} and dealtype='수입' and category='기타') inetc,
+		(select nvl(sum(amount),0) from accountbook where accountnum=#{accountnum} and dealtype='지출' and category='식사') exprice,
+		(select nvl(sum(amount),0) from accountbook where accountnum=#{accountnum} and dealtype='지출' and category='통신요금') expcel,
+		(select nvl(sum(amount),0) from accountbook where accountnum=#{accountnum} and dealtype='지출' and category='집세') exprent,
+		(select nvl(sum(amount),0) from accountbook where accountnum=#{accountnum} and dealtype='지출' and category='교통비') expfare,
+		(select nvl(sum(amount),0) from accountbook where accountnum=#{accountnum} and dealtype='지출' and category='기타') expetc
+		from dual
+	</select>
+	
+	<!-- 계좌 상세 내역 추가 -->
 	<insert id="Insert" parameterType="accountbook">
 		insert into accountbook
 		values((select nvl(max(abookNum),0)+1 from accountbook),#{dealType},#{amount},#{accounts},#{category},#{regDate},#{memo},#{accountNum})
 	</insert>
+	
+	<!-- 계좌 상세 내역 수정을 위한 내역 하나만 조회 -->
 	<select id="select" parameterType="int" resultType="accountbook">
 		select * from accountbook where abookNum = #{abookNum}
 	</select>
+	
+	<!-- 계좌 상세 내역 수정 -->
 	<update id="Update" parameterType="accountbook">
 		update accountbook set
 		abookNum=#{abookNum},
@@ -33,14 +55,19 @@
 		memo=#{memo}
 		where abookNum=#{abookNum}
 	</update>
+	
+	<!-- 계좌 상세 내역 삭제 -->
 	<delete id="delete" parameterType="int">
 		delete from accountbook where abookNum = #{abookNum}
 	</delete>
+	
+	<!-- (수입 - 지출) 구하기 -->
 	<select id="total" parameterType="int" resultType="int">
 		select
 		(select nvl(sum(amount),0) from accountbook where accountnum=#{accountnum} and dealtype='수입')
 		-
-		(select nvl(sum(amount),0) from accountbook where accountnum=#{accountnum} and dealtype='지출')
+		(select nvl(sum(amount),0) from
+		accountbook where accountnum=#{accountnum} and dealtype='지출')
 		from dual
 	</select>
 </mapper>
