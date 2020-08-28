@@ -8,31 +8,25 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/AccountStyle.css">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
-	/* 수입 카테고리 */
 	data1 = '<label><input type="radio" value="급여" name="category" required="required">급여</label><label><input type="radio" value="주식" name="category">주식</label><label><input type="radio" value="복권" name="category">복권</label><label><input type="radio" value="기타" name="category">기타</label>';
-	/* 지출 카테고리 */
 	data2 = '<label><input type="radio" value="식사" name="category" required="required"> 식사</label><label><input type="radio" value="통신요금" name="category"> 통신요금</label><label><input type="radio" value="집세" name="category"> 집세</label><label><input type="radio" value="교통비" name="category"> 교통비</label><label><input type="radio" value="기타" name="category">기타</label>';
-	
-		/* 수입을 선택했을 때 */
 	function dealType1() {
 		$("#category").html(data1)
 	}
-		/* 지출을 선택했을 때 */
 	function dealType2() {
 		$("#category").html(data2)
 	}
 </script>
 </head>
 <body>
-
 	세션 아이디 : ${sessionScope.memberNum }
 
-	<form action="AccountDetailInsert">
-		<input type="hidden" name="accountNum" value="${accountNum }">
+	<form action="AccountDetailUpdate">
+		<input type="hidden" name="accountNum" value="${accountBook.accountNum }"> <input type="hidden" name="abookNum" value="${accountBook.abookNum }">
 		<table>
 			<tr>
-				<th>계좌 번호</th>
-				<td>${accountNum }</td>
+				<th>계좌번호</th>
+				<td>${accountBook.accountNum }</td>
 			</tr>
 			<tr>
 				<th>거래종류</th>
@@ -48,13 +42,13 @@
 			<tr>
 				<th>금액</th>
 				<td>
-					<input type="text" name="amount" required="required">
+					<input type="text" name="amount" value="${accountBook.amount }" required="required">
 				</td>
 			</tr>
 			<tr>
 				<th>거래처</th>
 				<td>
-					<input type="text" name="accounts" required="required">
+					<input type="text" name="accounts" value="${accountBook.accounts }" required="required">
 				</td>
 			</tr>
 			<tr>
@@ -71,11 +65,11 @@
 			<tr>
 				<th>메모</th>
 				<td>
-					<input type="text" name="memo" required="required">
+					<input type="text" name="memo" value="${accountBook.memo }" required="required">
 				</td>
 			</tr>
 		</table>
-				<input type="submit" value="입력">
+				<input type="submit" value="수정">
 	</form>
 
 	<%@ include file="AccountMain.jsp"%>

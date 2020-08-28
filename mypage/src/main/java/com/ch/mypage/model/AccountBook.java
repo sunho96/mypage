@@ -14,4 +14,14 @@ public class AccountBook {
 	private Date regDate;
 	private String memo;
 	private int accountNum;
+	
+	private int insal;
+	private int insto;
+	private int inlot;
+	private int inetc;
+	private int exprice;
+	private int expcel;
+	private int exprent;
+	private int expfare;
+	private int expetc;
 }

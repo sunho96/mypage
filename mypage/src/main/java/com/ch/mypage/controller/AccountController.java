@@ -35,11 +35,10 @@ public class AccountController {
 	@RequestMapping(value = "/accountNumChk", produces = "text/html;charset=utf-8")
 	@ResponseBody
 	public String accountNumChk(int accountNum) {
-		System.out.println(accountNum);
 		String msg = "";
 		Account acc = as.accountNumChk(accountNum);
 		if (acc == null)
-			msg = "true";
+			msg = "사용 가능한 계좌번호입니다";
 		else
 			msg = "이미 사용중인 계좌번호입니다";
 		return msg;
@@ -48,7 +47,7 @@ public class AccountController {
 	@RequestMapping("/AccountInsert")
 	public String AccountInsert(Account account, Model model) {
 		int result = 0;
-		result = as.AccountInsert(account);
+		result = as.Insert(account);
 		model.addAttribute("result", result);
 		return "Account/AccountInsert";
 	}
@@ -56,20 +55,66 @@ public class AccountController {
 	@RequestMapping("/AccountList")
 	public String AccountList(HttpSession session, Model model) {
 		int memberNum = (Integer) session.getAttribute("memberNum");
-		Collection<Account> AccountList = as.AccountList(memberNum);
+		Collection<Account> AccountList = as.List(memberNum);
 		model.addAttribute("AccountList", AccountList);
 		return "Account/AccountList";
 	}
 
 	@RequestMapping("/AccountDetailList")
 	public String AccountDetailList(int accountNum, Model model) {
-		Collection<AccountBook> AccountBookList = abs.AccountBookList(accountNum);
+		Collection<AccountBook> AccountBookList = abs.List(accountNum);
+		AccountBook detailTotal = abs.detailTotal(accountNum);
+		int total = abs.total(accountNum);
+		int result = as.updatetotal(accountNum,total);
+		model.addAttribute("total", total);
+		model.addAttribute("detailTotal", detailTotal);
+		model.addAttribute("result", result);
+		model.addAttribute("accountNum", accountNum);
 		model.addAttribute("AccountBookList", AccountBookList);
 		return "Account/AccountDetailList";
 	}
 
 	@RequestMapping("/AccountDetailInsertForm")
-	public String AccountDetailInsertForm() {
+	public String AccountDetailInsertForm(int accountNum, Model model) {
+		model.addAttribute("accountNum", accountNum);
 		return "Account/AccountDetailInsertForm";
+	}
+
+	@RequestMapping("/AccountDetailInsert")
+	public String AccountDetailInsert(AccountBook accountBook, Model model) {
+		int result = 0;
+		result = abs.Insert(accountBook);
+		model.addAttribute("result", result);
+		model.addAttribute("accountNum", accountBook.getAccountNum());
+		return "Account/AccountDetailInsert";
+	}
+
+	@RequestMapping("/AccountDetailUpdateForm")
+	public String AccountDetailUpdateForm(int abookNum, Model model) {
+		AccountBook accountBook = abs.select(abookNum);
+		model.addAttribute("accountBook", accountBook);
+		return "Account/AccountDetailUpdateForm";
+	}
+
+	@RequestMapping("/AccountDetailUpdate")
+	public String AccountDetailUpdate(AccountBook accountBook, Model model) {
+		int result = 0;
+		result = abs.Update(accountBook);
+		model.addAttribute("result", result);
+		model.addAttribute("accountNum", accountBook.getAccountNum());
+		return "Account/AccountDetailUpdate";
+	}
+
+	@RequestMapping(value = "/AccountDetailDeleteForm", produces = "text/html;charset=utf-8")
+	@ResponseBody
+	public String AccountDetailDeleteForm(int abookNum) {
+		String msg = "";
+		int result = 0;
+		result = abs.delete(abookNum);
+		if (result > 0)
+			msg = "삭제 완료 !";
+		else
+			msg = "삭제 실패 !";
+		return msg;
 	}
 }

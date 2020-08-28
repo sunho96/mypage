@@ -4,13 +4,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/AccountStyle.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
 	function accchk() {
-		alert(frm.accountNum.value);
-		
-		$("#accountNumChk").html(frm.accountNum.value);
-		$.post('accountNumChk', 'accountNum='+frm.accountNum.value, function(data) {
+		event.preventDefault();
+		$.post('accountNumChk', 'accountNum=' + frm.accountNum.value, function(
+				data) {
 			$('#accountNumChk').html(data);
 		});
 	}
@@ -18,17 +18,19 @@
 </head>
 <body>
 	세션 아이디 : ${sessionScope.memberNum }
-	<form action="AccountInsert" method="post" name="frm">
+	<form action="AccountInsert" method="post" name="frm" onsubmit="return accchk()">
 		<input type="hidden" name="memberNum" value="${sessionScope.memberNum }"> <input type="hidden" name=total value="0">
 		<table>
 			<tr>
 				<th>계좌번호</th>
-				<td><input type="text" name="accountNum" value="11"> <input type="button" onclick="accchk()" value="중복체크">
+				<td><input type="text" name="accountNum" required="required"> <input type="button" onclick="accchk()" value="중복체크">
 					<div id="accountNumChk"></div></td>
 			</tr>
 			<tr>
 				<th>은행</th>
-				<td><input type="text" name="bank"></td>
+				<td>
+					<input type="text" name="bank" required="required">
+				</td>
 			</tr>
 			<tr>
 				<th colspan="2"><input type="submit" value="입력"></th>
