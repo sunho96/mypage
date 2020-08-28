@@ -35,11 +35,10 @@ public class AccountController {
 	@RequestMapping(value = "/accountNumChk", produces = "text/html;charset=utf-8")
 	@ResponseBody
 	public String accountNumChk(int accountNum) {
-		System.out.println(accountNum);
 		String msg = "";
 		Account acc = as.accountNumChk(accountNum);
 		if (acc == null)
-			msg = "true";
+			msg = "사용 가능한 계좌번호입니다";
 		else
 			msg = "이미 사용중인 계좌번호입니다";
 		return msg;
@@ -64,12 +63,23 @@ public class AccountController {
 	@RequestMapping("/AccountDetailList")
 	public String AccountDetailList(int accountNum, Model model) {
 		Collection<AccountBook> AccountBookList = abs.AccountBookList(accountNum);
+		model.addAttribute("accountNum", accountNum);
 		model.addAttribute("AccountBookList", AccountBookList);
 		return "Account/AccountDetailList";
 	}
 
 	@RequestMapping("/AccountDetailInsertForm")
-	public String AccountDetailInsertForm() {
+	public String AccountDetailInsertForm(int accountNum, Model model) {
+		model.addAttribute("accountNum", accountNum);
 		return "Account/AccountDetailInsertForm";
+	}
+	
+	@RequestMapping("/AccountDetailInsert")
+	public String AccountDetailInsert(AccountBook accountBook, Model model) {
+		int result = 0;
+		result = abs.AccountInsert(accountBook);
+		model.addAttribute("result", result);
+		model.addAttribute("accountNum", accountBook.getAccountNum());
+		return "Account/AccountDetailInsert";
 	}
 }

@@ -17,4 +17,8 @@ public class AccountBookServiceImpl implements AccountBookService{
 		return abd.AccountBookList(accountNum);
 	}
 
+	public int AccountInsert(AccountBook accountBook) {
+		return abd.AccountInsert(accountBook);
+	}
+
 }

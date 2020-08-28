@@ -15,6 +15,10 @@
 	<select id="AccountBookList" parameterType="int" resultMap="accountbookResult">
 		select * from accountbook where accountNum = #{accountNum}
 	</select>
+	<insert id="AccountInsert" parameterType="accountbook">
+		insert into accountbook
+		values((select nvl(max(n_id),0)+1 from accountbook),#{dealType},#{amount},#{accounts},#{category},sysdate,#{memo},#{accountNum})
+	</insert>
 </mapper>
 
 

@@ -8,4 +8,6 @@ public interface AccountBookDao {
 
 	Collection<AccountBook> AccountBookList(int accountNum);
 
+	int AccountInsert(AccountBook accountBook);
+
 }
