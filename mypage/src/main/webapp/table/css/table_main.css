@@ -75,11 +75,14 @@ textarea:focus, input:focus {
 button {
 	outline: none !important;
 	border: none;
-	background: blue;
+	background: none;
+    color: darkblue;
+
 }
 
 button:hover {
 	cursor: pointer;
+	background-color: gray;
 }
 
 iframe {
@@ -177,27 +180,16 @@ th, td {
   font-weight: unset;
   padding-right: 10px;
 }
-
-.column1 {
-  width: 33%;
-  padding-left: 40px;
+/* 번호 */
+ .column1 {
+  width: 20%;
+  padding-left: 15px
 }
-
+/*제목  */
 .column2 {
-  width: 13%;
+  width: 45%;
 }
 
-.column3 {
-  width: 22%;
-}
-
-.column4 {
-  width: 19%;
-}
-
-.column5 {
-  width: 13%;
-}
 
 .table100-head th {
   padding-top: 18px;
@@ -224,7 +216,7 @@ th, td {
 }
 
 .table100-body {
-  max-height: 585px;
+  max-height: 580px;
   overflow: auto;
 }
 
@@ -249,8 +241,8 @@ th, td {
 }
 
 .table100.ver1 .table100-body tr:nth-child(even) {
-  background-color: #f6f6ff; /* 목록 짝수 */
-}
+  background-color: white; 목록 짝수
+} 
 
 /*---------------------------------------------*/
 
@@ -402,10 +394,10 @@ th, td {
   border-bottom: 2px solid #f2f2f2;
 }
 
-.table100.ver4 .column1 {
+/* .table100.ver4 .column1 {
   padding-left: 7px;
 }
-
+ */
 .table100.ver4 td {
   font-family: Lato-Regular;
   font-size: 15px;

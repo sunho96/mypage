@@ -42,9 +42,9 @@
 						<table>
 							<thead>
 								<tr class="row100 head">
-									<th class="cell100 column1">번호</th>
-									<th class="cell100 column1">제목</th>
-									<th class="cell100 column1">날짜</th>
+									<th class="cell100 column1" >번호</th>
+									<th class="cell100 column2">제목</th>
+									<th class="cell100 column1">작성일</th>
 								</tr>
 							</thead>
 						</table>
@@ -56,8 +56,8 @@
 								<c:forEach var="d" items="${list }">
 									<c:if test="${d.del=='n' }">
 										<tr class="row100 body">
-											<td class="cell100 column1">${d.diaryNum }</td>
-											<td class="cell100 column1"><a
+											<td class="cell100 column1" >${d.diaryNum }</td>
+											<td class="cell100 column2"><a
 												href="diary/view?diaryNum=${d.diaryNum}">${d.subject }</a></td>
 											<td class="cell100 column1">${d.regDate }</td>
 										</tr>
@@ -70,7 +70,9 @@
 
 				</div>
 			</div>
+		
 		</div>
+			<a href="diary/insertDiary">다이어리 리스트 추가</a>
 	</div>
 
 

@@ -82,5 +82,20 @@ public class DiaryController {
 		model.addAttribute("result", result);
 		return "diary/del";
 	}
+	@RequestMapping("diary/insertDiary")
+	public String insertDiary() {
+		Diary d= new Diary();
+		for (int i = 30; i < 55; i++) {
+//			d.setDiaryNum(i);
+//			d.setSubject("hi!"+i);
+//			d.setContent("content"+i);
+//			d.setMemberNum(1);
+//			d.setDiaryCataNum(1);
+			d.setDiaryNum(i);
+			ds.delete(d.getDiaryNum());
+		}
+		return "diary/insertDiary";
+		
+	}
 	
 }
