@@ -15,7 +15,7 @@
 			$("#noticeList").load("notice/insertForm");
 		});
 		$("#diaryInsertForm").load("diary/insertForm");
-		$("#diaryList2").load("diary/list");
+		$("#diaryList2").load("diary/catagory");
 		$("#diaryTrash2").load("diary/trash");
 		$("#diaryView").load("diary/view");
 	})
