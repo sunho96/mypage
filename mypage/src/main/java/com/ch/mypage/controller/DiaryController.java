@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ch.mypage.model.Diary;
+import com.ch.mypage.model.DiaryCatagory;
 import com.ch.mypage.service.DiaryService;
 
 @Controller
@@ -18,7 +19,9 @@ public class DiaryController {
 	private DiaryService ds;
 
 	@RequestMapping("diary/insertForm")
-	public String insertForm() {
+	public String insertForm(Model model) {
+		List<DiaryCatagory> cataList = ds.cataList();
+		model.addAttribute("cataList",cataList);
 		return "diary/insertForm";
 	}
 
@@ -92,7 +95,7 @@ public class DiaryController {
 		int memberNum = (Integer) session.getAttribute("memberNum");
 		List<Diary> typeList = ds.typeList(memberNum, diaryCataNum);
 		model.addAttribute("typeList",typeList);
-		return "diary/list";	
+		return "diary/typeList";	
 	}
 
 }

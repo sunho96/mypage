@@ -18,7 +18,7 @@
 		$("#diaryList2").load("diary/catagory");
 		$("#diaryTrash2").load("diary/trash");
 		$("#diaryView").load("diary/view");
-	})
+	});
 </script>
 <style type="text/css">
 </style>

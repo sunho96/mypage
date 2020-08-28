@@ -13,10 +13,10 @@
 		<result property="memberNum" column="memberNum"/>
 	</resultMap>
 	<insert id="insert" parameterType="diary">
-		insert into diary values(diary_seq.nextval,#{subject},#{content},sysdate,sysdate,'n',1,#{memberNum})
+		insert into diary values(diary_seq.nextval,#{subject},#{content},sysdate,sysdate,'n',#{diayCataNum},#{memberNum})
 	</insert>
 	<select id="list" parameterType="int" resultMap="diaryResult">
-		select * from diary where memberNum = #{memberNum}
+		select * from diary where memberNum = #{memberNum} order by diaryNum desc
 	</select>
 	<select id="select" parameterType="int" resultType="diary">
 		select * from diary where diaryNum=#{diaryNum}

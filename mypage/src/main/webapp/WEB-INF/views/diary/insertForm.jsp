@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ include file="../member/sessionChk.jsp" %>
+	<%@ include file="../header.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,8 +12,15 @@
 
 <form action="diary/insert" method="post">
 	<input type="hidden" name="memberNum" value="${memberNum}" >
-	
 	<table>
+	<tr><th>Catagory</th></tr>
+	<tr><td>
+		<select name="diaryCataNum">
+		<c:forEach var="c" items="${cataList }">
+			<option value=${c.diaryCataNum }>${c.name }</option>
+		</c:forEach>
+		</select>
+	</td></tr>
 		<tr><th>subject</th></tr>
 		<tr><td><input type="text" name="subject" required="required" autofocus="autofocus" name="subject" width="100px"></td></tr>
 		<tr><th align="center">content</th></tr>

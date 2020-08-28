@@ -23,9 +23,7 @@
 
 <div class="container">
   <ul class="nav nav-tabs">
-  <li class="active"><a data-toggle="tab" href="${main }/main#diaryList">Home</a></li>
-   <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
-   <li><a data-toggle="tab" href="#allList">all</a></li>
+   <li class="active"><a data-toggle="tab" href="#allList">all</a></li>
   <c:forEach var="c" items="${cataList }">
   	 <li><a data-toggle="tab" href="#${c.name }" onclick="cata(${c.diaryCataNum})">${c.name }</a></li>
   </c:forEach>
@@ -34,14 +32,6 @@
   </ul>
 
   <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-      <h3>HOME</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    <div id="menu1" class="tab-pane fade">
-      <h3>Menu 1</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
     <div id="list"></div>
     <div id="allList"></div>
 </div>
