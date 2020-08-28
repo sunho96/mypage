@@ -42,4 +42,10 @@ public class DiaryDaoImpl implements DiaryDao{
 		
 		return sst.update("diaryns.delete",diaryNum);
 	}
+
+	@Override
+	public int save(int diaryNum) {
+		
+		return sst.update("diaryns.save",diaryNum);
+	}
 }

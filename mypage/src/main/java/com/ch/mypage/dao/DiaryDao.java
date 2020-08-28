@@ -16,4 +16,6 @@ public interface DiaryDao {
 
 	int delete(int diaryNum);
 
+	int save(int diaryNum);
+
 }

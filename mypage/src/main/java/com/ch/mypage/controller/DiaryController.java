@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ch.mypage.model.Diary;
 import com.ch.mypage.service.DiaryService;
@@ -70,6 +71,22 @@ public class DiaryController {
 		int memberNum= (Integer) session.getAttribute("memberNum");
 		List<Diary> list = ds.list(memberNum);
 		model.addAttribute("list",list);
+		return "diary/trash";
+	}
+	@RequestMapping(value="diary/save", produces = "text/html;charset=utf-8;")
+	@ResponseBody
+	public String save(int diaryNum) {
+		String msg="";
+		int result = ds.save(diaryNum);
+		if(result ==1) msg = "복구 성공";
+		else msg= "복구 실패";
+		return msg;
+	}
+	@RequestMapping("diary/del")
+	public String del(int diaryNum) {
+		System.out.println("diary diaryNum= "+diaryNum);
+		ds.del(diaryNum);
+		
 		return "diary/trash";
 	}
 	

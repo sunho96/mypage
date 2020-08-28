@@ -16,4 +16,8 @@ public interface DiaryService {
 
 	int delete(int diaryNum);
 
+	int save(int diaryNum);
+
+	void del(int diaryNum);
+
 }

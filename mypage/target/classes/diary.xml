@@ -27,4 +27,7 @@
 	<update id="delete" parameterType="int">
 		update diary set del='y' where diaryNum=#{diaryNum}
 	</update>
+	<update id="save" parameterType="int">
+		update diary set del='n' where diaryNum=#{diaryNum}
+	</update>
 </mapper>
