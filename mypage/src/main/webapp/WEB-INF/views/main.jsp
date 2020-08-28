@@ -20,10 +20,15 @@
 		$("#diaryView").load("diary/view");
 	});
 </script>
+<script type="text/javascript">
+$("#Accountdisp").load("AccountList");
+$(function() {	$("#AccountMain").click(function(){ $("#Accountdisp").load("AccountList"); });})
+</script>
 <style type="text/css">
 </style>
 </head>
 <body class="is-preload">
+
 
 	<div id="logo" align="center" style="margin-top: 50px;">
 		<img alt="" src="images/logo_white1.png" width="280px">
@@ -38,7 +43,7 @@
 		<!-- Nav -->
 		<nav id="nav">
 			<a href="#" class="icon solid fa-home"><span>Home</span></a> <a
-				href="#contact" class="icon solid fa-piggy-bank"><span>AccountBook</span></a>
+				href="#Account" class="icon solid fa-piggy-bank" id="AccountMain"><span>AccountBook</span></a>
 			<a href="#diaryWrite" class="icon solid fa-pen"><span>write Diary</span></a> 
 			<a href="#diaryList" class="icon solid fa-book"><span>read Diary</span></a> 
 			<a href="#notice" class="icon solid fa-bullhorn"><span>notice</span></a>
@@ -107,6 +112,15 @@
 				<div id="noticeList" align="center"></div>
 				<div id="noticeInsertForm">입력</div>
 			</article>
+			
+			<!-- Account -->
+			<article id="Account" class="panel">
+				<header>
+					<h2>Account</h2>
+				</header>
+			<div id="Accountdisp"></div>
+			</article>
+			
 
 		</div>
 

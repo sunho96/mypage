@@ -5,17 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/AccountStyle.css">
 </head>
 <body>
 	세션 아이디 : ${sessionScope.memberNum }
-	<table>
+	<table class="table">
+	<thead>
 		<tr>
 			<th>계좌번호</th>
 			<th>은행</th>
 			<th>잔액</th>
 		</tr>
+		</thead>
 		<!-- 등록한 계좌가 없을 때 -->
+		<tbody>
 		<c:if test="${empty AccountList}">
 			<tr>
 				<th colspan="3">등록한 계좌가 없습니다</th>
@@ -35,6 +37,7 @@
 				</tr>
 			</c:forEach>
 		</c:if>
+		</tbody>
 	</table>
 
 	<%@ include file="AccountMain.jsp"%>
