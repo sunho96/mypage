@@ -5,6 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+@import url("AccountCSS.css");
+</style>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
 function Delete(abookNum) {
@@ -72,9 +75,10 @@ function Delete(abookNum) {
 
 	<h2>계좌번호 : ${accountNum }</h2>
 	<a href="AccountDetailInsertForm?accountNum=${accountNum }">계좌 상세내역 추가하기</a>
-	<div id="piechart"></div>
-	<div id="piechart2"></div>
-
+	<table style="width: 100%; height: 900px;">
+	<tr>
+	<td id="piechart" style="width: 50%;"></td><td id="piechart2" style="width: 50%;"></td>
+	</tr>
 
 	<table>
 		<tr>
