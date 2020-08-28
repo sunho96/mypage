@@ -1,5 +1,6 @@
 package com.ch.mypage.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.ch.mypage.model.Diary;
+import com.ch.mypage.model.DiaryCatagory;
 
 @Repository
 public class DiaryDaoImpl implements DiaryDao{
@@ -53,5 +55,20 @@ public class DiaryDaoImpl implements DiaryDao{
 	public int del(int diaryNum) {
 		
 		return sst.delete("diaryns.del",diaryNum);
+	}
+
+	@Override
+	public List<DiaryCatagory> cataList() {
+		
+		return sst.selectList("diaryCatans.cataList");
+	}
+
+	@Override
+	public List<Diary> typeList(int memberNum, int diaryCataNum) {
+		
+		HashMap<String, Integer> hm = new HashMap<String, Integer>();
+		hm.put("memberNum", memberNum);
+		hm.put("diaryCataNum", diaryCataNum);
+		return sst.selectList("diaryns.typeList",hm);
 	}
 }

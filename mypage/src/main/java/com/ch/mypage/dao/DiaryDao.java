@@ -3,6 +3,7 @@ package com.ch.mypage.dao;
 import java.util.List;
 
 import com.ch.mypage.model.Diary;
+import com.ch.mypage.model.DiaryCatagory;
 
 public interface DiaryDao {
 
@@ -19,5 +20,9 @@ public interface DiaryDao {
 	int save(int diaryNum);
 
 	int del(int diaryNum);
+
+	List<DiaryCatagory> cataList();
+
+	List<Diary> typeList(int memberNum, int diaryCataNum);
 
 }

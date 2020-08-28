@@ -12,9 +12,15 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$("#diaryCataDisp").load("diary/diaryCatagory");
+	})
+</script>
 </head>
 <body>
-
+	<div id="diaryCataDisp"></div>
 	<div class="container">
 		<table class="table">
 			<thead>
@@ -25,15 +31,28 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="d" items="${list }">
-					<c:if test="${d.del=='n' }">
-						<tr>
-							<td>${d.diaryNum }</td>
-							<td><a href="diary/view?diaryNum=${d.diaryNum}">${d.subject }</a></td>
-							<td>${d.regDate }</td>
-						</tr>
-					</c:if>
-				</c:forEach>
+				<c:if test="${not empty list }">
+					<c:forEach var="d" items="${list }">
+						<c:if test="${d.del=='n' }">
+							<tr>
+								<td>${d.diaryNum }</td>
+								<td><a href="diary/view?diaryNum=${d.diaryNum}">${d.subject }</a></td>
+								<td>${d.regDate }</td>
+							</tr>
+						</c:if>
+					</c:forEach>
+				</c:if>
+				<%-- <c:if test="${not empty typeList }">
+					<c:forEach var="d" items="${typeList }">
+						<c:if test="${d.del=='n' }">
+							<tr>
+								<td>${d.diaryNum }</td>
+								<td><a href="diary/view?diaryNum=${d.diaryNum}">${d.subject }</a></td>
+								<td>${d.regDate }</td>
+							</tr>
+						</c:if>
+					</c:forEach>
+				</c:if> --%>
 			</tbody>
 		</table>
 	</div>

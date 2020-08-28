@@ -2,6 +2,7 @@ select * from notice;
 select * from diary;
 delete from diary;
 insert into diary values(diary_seq.nextval,'test','test',sysdate,sysdate,'n',1,1);
+select * from diary where memberNum=1 and diaryCataNum=1;
 drop sequence diary_seq;
 delete from diary;
 insert into diary values()

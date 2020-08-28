@@ -28,20 +28,25 @@ public class DiaryController {
 		return "diary/insert";
 	}
 	@RequestMapping("diary/list")
-	public String list(HttpSession session,Model model) {
+	public String list(int diaryCataNum,HttpSession session,Model model) {
 		int memberNum= (Integer) session.getAttribute("memberNum");
+		System.out.println("diaryCataNum="+diaryCataNum);
 		List<Diary> list = ds.list(memberNum);
 		model.addAttribute("list",list);
+		/*
+		 * if(diaryCataNum ==0) { List<Diary> list = ds.list(memberNum);
+		 * model.addAttribute("list",list); }else { List<Diary> typeList =
+		 * ds.typeList(memberNum,diaryCataNum); model.addAttribute("typeList",typeList);
+		 * }
+		 */
 		return "diary/list";
 	}
 	@RequestMapping("diary/view")
 	public String view(int diaryNum, Model model) {
 		Diary diary = ds.select(diaryNum);
 		model.addAttribute("diary",diary);
-		return "diary/view";
-		
-	}
-	
+		return "diary/view";	
+	}	
 	@RequestMapping("diary/updateForm")
 	public String updateForm(int diaryNum,Model model) {
 		Diary diary = ds.select(diaryNum);
@@ -80,9 +85,5 @@ public class DiaryController {
 		model.addAttribute("result", result);
 		return "diary/del";
 	}
-	
-
-		
-	
 	
 }

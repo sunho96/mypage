@@ -33,4 +33,7 @@
 	<delete id="del" parameterType="int">
 		delete from diary where diaryNum=#{diaryNum}
 	</delete>
+	<select id="typeList" parameterType="hashmap" resultMap="diaryResult">
+		select * from diary where memberNum = #{memberNum} and diaryCataNum=#{diaryCataNum}
+	</select>
 </mapper>
