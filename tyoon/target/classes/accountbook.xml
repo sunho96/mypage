@@ -12,13 +12,37 @@
 		<result property="memo" column="memo" />
 		<result property="accountNum" column="accountNum" />
 	</resultMap>
-	<select id="AccountBookList" parameterType="int" resultMap="accountbookResult">
-		select * from accountbook where accountNum = #{accountNum}
+	<select id="List" parameterType="int" resultMap="accountbookResult">
+		select * from accountbook where accountNum = #{accountNum} order by regdate desc
 	</select>
-	<insert id="AccountInsert" parameterType="accountbook">
+	<insert id="Insert" parameterType="accountbook">
 		insert into accountbook
-		values((select nvl(max(n_id),0)+1 from accountbook),#{dealType},#{amount},#{accounts},#{category},sysdate,#{memo},#{accountNum})
+		values((select nvl(max(abookNum),0)+1 from accountbook),#{dealType},#{amount},#{accounts},#{category},#{regDate},#{memo},#{accountNum})
 	</insert>
+	<select id="select" parameterType="int" resultType="accountbook">
+		select * from accountbook where abookNum = #{abookNum}
+	</select>
+	<update id="Update" parameterType="accountbook">
+		update accountbook set
+		abookNum=#{abookNum},
+		dealType=#{dealType},
+		amount=#{amount},
+		accounts=#{accounts},
+		category=#{category},
+		regDate=#{regDate},
+		memo=#{memo}
+		where abookNum=#{abookNum}
+	</update>
+	<delete id="delete" parameterType="int">
+		delete from accountbook where abookNum = #{abookNum}
+	</delete>
+	<select id="total" parameterType="int" resultType="int">
+		select
+		(select nvl(sum(amount),0) from accountbook where accountnum=#{accountnum} and dealtype='수입')
+		-
+		(select nvl(sum(amount),0) from accountbook where accountnum=#{accountnum} and dealtype='지출')
+		from dual
+	</select>
 </mapper>
 
 

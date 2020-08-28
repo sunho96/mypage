@@ -8,15 +8,18 @@
 		<result property="bank" column="bank" />
 		<result property="memberNum" column="memberNum" />
 	</resultMap>
-	<select id="AccountList" parameterType="int" resultMap="accountResult">
+	<select id="List" parameterType="int" resultMap="accountResult">
 		select * from account where memberNum=#{memberNum}
 	</select>
-	<insert id="AccountInsert" parameterType="account">
+	<insert id="Insert" parameterType="account">
 		insert into account values(#{accountNum},#{total},#{bank},#{memberNum})
 	</insert>
 	<select id="accountNumChk" parameterType="int" resultType="account">
-		select * from account where accountNum = #{accountNum}
+		select accountNum, total, bank, memberNum from account where accountNum = #{accountNum}
 	</select>
+	<update id="updatetotal" parameterType="hashmap">
+		update account set total=#{total} where accountNum=#{accountNum}
+	</update>
 </mapper>
 
 

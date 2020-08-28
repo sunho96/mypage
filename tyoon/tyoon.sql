@@ -1,3 +1,26 @@
+select nvl(max(abookNum),0)+1 from accountbook;
+select sum(amount) from accountbook where accountnum=11 and dealtype='수입';
+select sum(amount) from accountbook where accountnum=11 and dealtype='지출';
+
+select a.accountnum t, select nvl(sum(ab.amount),0) from account a,accountbook ab where a.accountnum=ab.accountnum and dealtype='지출'; total, a.bank, a.membernum from account a, accountbook ab;
+select * from accountbook;
+select * from account;
+
+
+select 
+
+select nvl(sum(ab.amount),0) from account a,accountbook ab where a.accountnum=ab.accountnum and dealtype='지출';
+
+select
+		(select nvl(sum(ab.amount),0) from account a, accountbook ab where a.accountnum=ab.accountnum and dealtype='수입')
+		-
+		(select nvl(sum(amount),0) from accountbook where a.accountnum=ab.accountnum and dealtype='지출')
+from dual;
+
+select a.accountnum, ab.accountnum from account a, accountbook ab where memberNum=101 and a.accountnum=ab.accountnum;
+
+--테스트값 입력
+
 select * from member;
 select * from account;
 select * from accountBook;
@@ -18,6 +41,12 @@ insert into account values (22,'0','하나','102');
 insert into accountBook values (1,'지출',6000,'김밥천국','식사',sysdate,'제육',11);
 insert into accountBook values (2,'지출',9000,'신촌칼국수','식사',sysdate,'칼국수',11);
 insert into accountBook values (3,'수입',9000,'1조','식사',sysdate,'칼국수',11);
+insert into accountBook values (5,'수입',9000,'1조','식사',sysdate,'칼국수',11);
+insert into accountBook values (6,'수입',9000,'1조','식사',sysdate,'칼국수',12);
+insert into accountBook values (7,'수입',9000,'1조','식사',sysdate,'칼국수',12);
+insert into accountBook values (8,'수입',9000,'1조','식사',sysdate,'칼국수',12);
+insert into accountBook values (9,'수입',9000,'1조','식사',sysdate,'칼국수',12);
+insert into accountBook values (10,'수입',9000,'1조','식사',sysdate,'칼국수',11);
 
 
 

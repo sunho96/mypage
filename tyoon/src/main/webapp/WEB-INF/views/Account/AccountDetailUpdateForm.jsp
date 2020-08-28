@@ -18,15 +18,14 @@
 </script>
 </head>
 <body>
-
 	세션 아이디 : ${sessionScope.memberNum }
 
-	<form action="AccountDetailInsert">
-		<input type="hidden" name="accountNum" value="${accountNum }">
+	<form action="AccountDetailUpdate">
+		<input type="hidden" name="accountNum" value="${accountBook.accountNum }"> <input type="hidden" name="abookNum" value="${accountBook.abookNum }">
 		<table>
 			<tr>
-				<th>계좌 번호</th>
-				<td>${accountNum }</td>
+				<th>계좌번호</th>
+				<td>${accountBook.accountNum }</td>
 			</tr>
 			<tr>
 				<th>거래종류</th>
@@ -42,13 +41,13 @@
 			<tr>
 				<th>금액</th>
 				<td>
-					<input type="text" name="amount" required="required">
+					<input type="text" name="amount" value="${accountBook.amount }" required="required">
 				</td>
 			</tr>
 			<tr>
 				<th>거래처</th>
 				<td>
-					<input type="text" name="accounts" required="required">
+					<input type="text" name="accounts" value="${accountBook.accounts }" required="required">
 				</td>
 			</tr>
 			<tr>
@@ -65,11 +64,11 @@
 			<tr>
 				<th>메모</th>
 				<td>
-					<input type="text" name="memo" required="required">
+					<input type="text" name="memo" value="${accountBook.memo }" required="required">
 				</td>
 			</tr>
 		</table>
-				<input type="submit" value="입력">
+				<input type="submit" value="수정">
 	</form>
 
 	<%@ include file="AccountMain.jsp"%>
