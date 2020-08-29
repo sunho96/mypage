@@ -6,6 +6,19 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- 불러왔을때 a태그 실행 방지 -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#Accountdisp a").click(function(){
+			var link = $(this).attr("href");
+			event.preventDefault();
+			$.post(link,"",function(data){
+				$("#Accountdisp").load(link);
+			});
+			return false;
+		});	
+	});
+</script>
 <script type="text/javascript">
 	data1 = '<label><input type="radio" value="급여" name="category" required="required">급여</label><label><input type="radio" value="주식" name="category">주식</label><label><input type="radio" value="복권" name="category">복권</label><label><input type="radio" value="기타" name="category">기타</label>';
 	data2 = '<label><input type="radio" value="식사" name="category" required="required"> 식사</label><label><input type="radio" value="통신요금" name="category"> 통신요금</label><label><input type="radio" value="집세" name="category"> 집세</label><label><input type="radio" value="교통비" name="category"> 교통비</label><label><input type="radio" value="기타" name="category">기타</label>';

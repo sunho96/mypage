@@ -5,4 +5,5 @@
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 <link href="${path}/css/bootstrap.min.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-
+<!-- 구글 차트 -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

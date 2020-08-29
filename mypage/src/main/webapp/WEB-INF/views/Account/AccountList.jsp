@@ -5,6 +5,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- 불러왔을때 a태그 실행 방지 -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#Accountdisp a").click(function(){
+			var link = $(this).attr("href");
+			event.preventDefault();
+			$.post(link,"",function(data){
+				$("#Accountdisp").load(link);
+			});
+			return false;
+		});	
+	});
+</script>
 </head>
 <body>
 	세션 아이디 : ${sessionScope.memberNum }

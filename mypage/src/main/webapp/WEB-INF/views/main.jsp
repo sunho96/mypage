@@ -22,7 +22,7 @@
 </script>
 <script type="text/javascript">
 $("#Accountdisp").load("AccountList");
-$(function() {	$("#AccountMain").click(function(){ $("#Accountdisp").load("AccountList"); });})
+$(function() {	$("#AccountMain").click(function(){ $("#Accountdisp").load("AccountList"); });});
 </script>
 <style type="text/css">
 </style>
@@ -118,7 +118,7 @@ $(function() {	$("#AccountMain").click(function(){ $("#Accountdisp").load("Accou
 				<header>
 					<h2>Account</h2>
 				</header>
-			<div id="Accountdisp"></div>
+			<div id="Accountdisp" style="width: 1500px;"></div>
 			</article>
 			
 
