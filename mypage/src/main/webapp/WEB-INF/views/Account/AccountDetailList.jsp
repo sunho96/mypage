@@ -19,7 +19,7 @@
 		});	
 	});
 </script>
-<!-- 삭제버튼 눌렀을 때 실행될 jquery -->
+<!-- 삭제버튼 눌렀을 때-->
 <script type="text/javascript">
 function Delete(abookNum) {
 	var con;
@@ -28,7 +28,7 @@ function Delete(abookNum) {
 		event.preventDefault();
 		$.post('AccountDetailDeleteForm',"abookNum=" + abookNum, function(data) {
 			alert(data);
-			location.reload();
+			$("#Accountdisp").load("AccountDetailList?accountNum=${accountNum }");
 		});
 	}
 		else alert("삭제 취소");
@@ -118,8 +118,9 @@ $(function() {
 		</table>
 	</div>
 	<!-- 상세내역 표시 위치 -->
-	<div style="overflow: auto; height: 700px;"> <!-- 스크롤 생기게 하는거 -->
-		<table>
+	<!-- 스크롤 생기게 하는거 -->
+	<div style="overflow: auto; height: 500px;">
+		<table class="table">
 			<thead>
 				<tr>
 					<th>거래종류</th>

@@ -20,6 +20,7 @@
 		$("#diaryView").load("diary/view");
 	});
 </script>
+<!-- Account 눌렀을 때 -->
 <script type="text/javascript">
 $("#Accountdisp").load("AccountList");
 $(function() {	$("#AccountMain").click(function(){ $("#Accountdisp").load("AccountList"); });});
@@ -117,8 +118,9 @@ $(function() {	$("#AccountMain").click(function(){ $("#Accountdisp").load("Accou
 			<article id="Account" class="panel">
 				<header>
 					<h2>Account</h2>
+					<h2>가계부</h2>
 				</header>
-			<div id="Accountdisp" style="width: 1500px;"></div>
+			<div id="Accountdisp" style="overflow: auto;"></div>
 			</article>
 			
 
